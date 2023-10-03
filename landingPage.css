@@ -2,46 +2,122 @@
     font-family: Montserrat-Bold;
     src: url(Montserrat-Bold.ttf);
 }
+@font-face {
+  font-family: Montserrat-ExtraBold;
+  src: url(Montserrat-ExtraBold.ttf);
+}
+@font-face {
+  font-family: Montserrat-ExtraBoldItalic;
+  src: url(Montserrat-ExtraBoldItalic.ttf);
+}
+
+html{
+  height: 100%;
+}
 
 body {
-    background-image: url("LandingPageBg.png"); 
-    background-size: cover; 
-    background-repeat: no-repeat;
+  background-image: url(oldLadyBg.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
 }
 
-.DonateButton {
-  align-items: center;
-  background-image: linear-gradient(144deg, #3533CC, #3533CC);
-  border: 0;
-  border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  display: flex;
-  font-family: Montserrat-Bold;
-  font-size: 20px;
-  justify-content: center;
-  line-height: 1em;
-  max-width: 100%;
-  min-width: 140px;
-  padding: 19px 24px;
+.layer {
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#TopTitle{
+  color: white;
+  font-size: 300%;
+  font-family: Montserrat-ExtraBoldItalic;
+  text-align: center;
+  width: 100%;
+  top: 1em;
+  position: relative;
+}
+
+#BottomTitle{
+  color: white;
+  font-size: 500%;
+  font-family: Montserrat-ExtraBold;
+  text-align: center;
+  width: 100%;
+}
+
+#Slogan{
+  color: white;
+  font-size: 250%;
+  font-family: Montserrat-ExtraBold;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  bottom: 1.5em;
+}
+
+#gridTitle{
+  color: white;
+  font-family: Montserrat-ExtraBold;
+  width: 10em;
+  font-size: 250%;
+  /* POSITION TEXT */
+  position: relative;
+  left: 26.6em;
+  top: 12.5em;
+}
+
+.box {
+  background-color: #F6CF6C;
+  border-radius: 0.3125em;
+  padding: 4em;
+}
+
+.girdWrapper {
+  background-color: transparent;
+  width: 37.5em;
+  display: grid;
+  grid-gap: 5.5em;
+  grid-template-columns: repeat(5, 3.125em);
+  grid-template-rows: repeat(5, 3.125em);
+  grid-auto-flow: column;
+
+  /* POSITION GIRD */
+  position: relative;
+  left: 25em;
+  top: 20em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  cursor: pointer;
 }
 
-.DonateButton:active,
-.DonateButton:hover {
-  outline: 10;
-  background-color: black;
+li a:hover:not(.active) {
+  background-color: #111;
 }
 
-@media (min-width: 768px) {
-  .DonateButton {
-    font-size: 24px;
-    min-width: 196px;
-  }
+.active {
+  background-color: #aabc21;
 }
+
