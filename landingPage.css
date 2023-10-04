@@ -1,123 +1,213 @@
 @font-face {
-    font-family: Montserrat-Bold;
-    src: url(Montserrat-Bold.ttf);
+  font-family: Montserrat-Bold;
+  src: url(Montserrat-Bold.ttf);
 }
 @font-face {
-  font-family: Montserrat-ExtraBold;
-  src: url(Montserrat-ExtraBold.ttf);
+  font-family: Montserrat-BoldItalic;
+  src: url(Montserrat-BoldItalic.ttf);
 }
 @font-face {
-  font-family: Montserrat-ExtraBoldItalic;
-  src: url(Montserrat-ExtraBoldItalic.ttf);
+font-family: Montserrat-ExtraBold;
+src: url(Montserrat-ExtraBold.ttf);
+}
+@font-face {
+font-family: Montserrat-ExtraBoldItalic;
+src: url(Montserrat-ExtraBoldItalic.ttf);
 }
 
+
 html{
-  height: 100%;
+height: 100%;
 }
 
 body {
-  background-image: url(oldLadyBg.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  width: 100%;
-  height: 100%;
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+overflow-x: hidden;
 }
 
-.layer {
-  background-color: rgba(0, 0, 0, 0.4);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
+.MainImage {
+background-image: url(oldLadyBg.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+width: 100%;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+position: relative;
+}
+
+.transparentLayer {
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.4);
+position: absolute; 
+top: 0;
+left: 0;
 }
 
 #TopTitle{
-  color: white;
-  font-size: 300%;
-  font-family: Montserrat-ExtraBoldItalic;
-  text-align: center;
-  width: 100%;
-  top: 1em;
-  position: relative;
+color: white;
+font-size: 500%;
+font-family: Montserrat-BoldItalic;
+text-align: center;
+width: 100%;
+bottom: 2.3em;
+position: relative;
 }
 
 #BottomTitle{
-  color: white;
-  font-size: 500%;
-  font-family: Montserrat-ExtraBold;
-  text-align: center;
-  width: 100%;
+position: relative;
+color: white;
+font-size: 700%;
+font-family: Montserrat-ExtraBold;
+text-align: center;
+width: 100%;
+bottom: 2.5em;
 }
 
 #Slogan{
-  color: white;
-  font-size: 250%;
-  font-family: Montserrat-ExtraBold;
-  text-align: center;
-  width: 100%;
-  position: relative;
-  bottom: 1.5em;
+color: white;
+font-size: 450%;
+font-family: Montserrat-Bold;
+text-align: center;
+width: 100%;
+position: relative;
+bottom: 6em;
+}
+
+/* Small screens (phones) */
+@media (max-width: 768px) {
+#TopTitle {
+  font-size: 200%; 
+}
+#BottomTitle {
+  font-size: 300%;
+}
+#Slogan {
+  font-size: 150%;
+}
+.girdWrapper {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
 }
 
 #gridTitle{
-  color: white;
-  font-family: Montserrat-ExtraBold;
-  width: 10em;
-  font-size: 250%;
-  /* POSITION TEXT */
-  position: relative;
-  left: 26.6em;
-  top: 12.5em;
+color: white;
+font-family: Montserrat-ExtraBold;
+width: 10em;
+font-size: 250%;
+/* POSITION TEXT */
+position: relative;
+left: 26.6em;
+top: 12.5em;
 }
 
 .box {
-  background-color: #F6CF6C;
-  border-radius: 0.3125em;
-  padding: 4em;
+background-color: #F6CF6C;
+border-radius: 0.3125em;
+padding: 4em;
 }
 
 .girdWrapper {
-  background-color: transparent;
-  width: 37.5em;
-  display: grid;
-  grid-gap: 5.5em;
-  grid-template-columns: repeat(5, 3.125em);
-  grid-template-rows: repeat(5, 3.125em);
-  grid-auto-flow: column;
+background-color: transparent;
+width: 37.5em;
+display: grid;
+grid-gap: 5.5em;
+grid-template-columns: repeat(5, 3.125em);
+grid-template-rows: repeat(5, 3.125em);
+grid-auto-flow: column;
 
-  /* POSITION GIRD */
-  position: relative;
-  left: 25em;
-  top: 20em;
+/* POSITION GIRD */
+position: relative;
+left: 25em;
+top: 20em;
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+position: fixed;
+top: 0;
+width: 100%;
 }
 
 li {
-  float: left;
+float: left;
 }
 
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+background-color: #111;
 }
 
 .active {
-  background-color: #aabc21;
+background-color: #aabc21;
+}
+
+.MainButton {
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.MainButton:focus {
+  color: #171e29;
+}
+
+.MainButton:hover {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+.MainButton:active {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .MainButton {
+    min-width: 170px;
+  }
 }
 
