@@ -26,6 +26,7 @@ padding: 0;
 width: 100%;
 height: 100%;
 overflow-x: hidden;
+background-color: antiquewhite;
 }
 
 .MainImage {
@@ -110,25 +111,44 @@ left: 26.6em;
 top: 12.5em;
 }
 
+.AboutUs{
+  margin-top: 10em;
+  background-color: burlywood;
+  width: 90%;
+  height: 20em;
+  position: relative;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 25px;
+  border: 2px solid black;
+  margin: auto;
+}
+
+#logo{
+  width: 10em;
+}
+
+
 .box {
 background-color: #F6CF6C;
 border-radius: 0.3125em;
-padding: 4em;
+padding: 1em;
 }
 
 .girdWrapper {
 background-color: transparent;
 width: 37.5em;
 display: grid;
-grid-gap: 5.5em;
-grid-template-columns: repeat(5, 3.125em);
-grid-template-rows: repeat(5, 3.125em);
+grid-gap: 0.7em;
+grid-template-columns: repeat(10, 2.125em);
+grid-template-rows: repeat(10, 2.125em);
 grid-auto-flow: column;
 
 /* POSITION GIRD */
 position: relative;
 left: 25em;
-top: 20em;
 }
 
 ul {
