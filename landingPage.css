@@ -54,7 +54,7 @@ left: 0;
 
 #TopTitle{
 color: white;
-font-size: 500%;
+font-size: 3vw;
 font-family: Montserrat-BoldItalic;
 text-align: center;
 width: 100%;
@@ -65,33 +65,33 @@ position: relative;
 #BottomTitle{
 position: relative;
 color: white;
-font-size: 700%;
+font-size: 6vw;
 font-family: Montserrat-ExtraBold;
 text-align: center;
 width: 100%;
-bottom: 2.5em;
+bottom: 2em;
 }
 
 #Slogan{
 color: white;
-font-size: 450%;
+font-size: 3.4vw;
 font-family: Montserrat-Bold;
 text-align: center;
 width: 100%;
 position: relative;
-bottom: 6em;
+bottom: 5.7em;
 }
 
 /* Small screens (phones) */
 @media (max-width: 768px) {
 #TopTitle {
-  font-size: 200%; 
+  font-size: 100%; 
 }
 #BottomTitle {
-  font-size: 300%;
+  font-size: 200%;
 }
 #Slogan {
-  font-size: 150%;
+  font-size: 120%;
 }
 .girdWrapper {
   grid-template-columns: repeat(3, 1fr);
@@ -163,15 +163,15 @@ background-color: #aabc21;
 }
 
 .MainButton {
+  position: relative;
   align-items: center;
   background-color: transparent;
   border: 2px solid #000;
   box-sizing: border-box;
   color: #000;
   cursor: pointer;
-  display: inline-flex;
   fill: #000;
-  font-family: Inter,sans-serif;
+  font-family: Montserrat-Bold, Inter,sans-serif;
   font-size: 16px;
   font-weight: 600;
   height: 48px;
@@ -194,20 +194,20 @@ background-color: #aabc21;
 }
 
 .MainButton:hover {
-  border-color: #06f;
-  color: #06f;
-  fill: #06f;
+  border-color: #aabc21;
+  color: #aabc21;
+  fill: #aabc21;
 }
 
 .MainButton:active {
-  border-color: #06f;
-  color: #06f;
-  fill: #06f;
+  border-color: #aabc21;
+  color: #aabc21;
+  fill: #aabc21;
 }
 
 @media (min-width: 768px) {
   .MainButton {
-    min-width: 170px;
+    min-width: 70px;
   }
 }
 
