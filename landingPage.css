@@ -27,6 +27,7 @@ width: 100%;
 height: 100%;
 overflow-x: hidden;
 background-color: #333;
+display: block;
 }
 
 .MainImage {
@@ -83,23 +84,6 @@ position: relative;
 bottom: 5.7em;
 }
 
-/* Small screens (phones) */
-@media (max-width: 768px) {
-#TopTitle {
-  font-size: 100%; 
-}
-#BottomTitle {
-  font-size: 200%;
-}
-#Slogan {
-  font-size: 120%;
-}
-.girdWrapper {
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-}
-}
-
 #gridTitle{
 color: white;
 font-family: Montserrat-ExtraBold;
@@ -114,10 +98,12 @@ top: 12.5em;
 .AboutUs{
   background-color: burlywood;
   width: 80%;
-  height: 25em;
+  height: auto;
   position: relative;
-  top:32.5em;
-  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  bottom: 2.5em;
   left: 0;
   right: 0;
   border-radius: 25px;
@@ -135,14 +121,24 @@ top: 12.5em;
   text-align: center;
 }
 
-#TM{
-  float: left;
+.Founder{
   width: 15%;
   height: auto;
   margin-right: 5%;
-  margin-left: 5%;
+  margin-left: 5%; 
+  display: inline;
+  transition: width 0.3s ease; 
+  transition: transform 0.3s ease; 
 }
 
+.Founder:hover{
+  width: 17.5%;
+}
+
+.pierceDesc{
+  width: 50%;
+  display: none;
+}
 
 #logo{
   width: 10em;
@@ -226,7 +222,7 @@ background-color: #aabc21;
   justify-content: center;
   letter-spacing: -.8px;
   line-height: 24px;
-  min-width: 140px;
+  min-width: 40px;
   outline: 0;
   padding: 0 17px;
   text-align: center;
@@ -253,9 +249,58 @@ background-color: #aabc21;
   fill: #aabc21;
 }
 
-@media (min-width: 768px) {
-  .MainButton {
-    min-width: 70px;
+#buttonContainter{
+  position: relative; 
+  bottom: 22.5em;
+}
+
+
+
+@media (max-width: 768px) {
+  #TopTitle {
+      font-size: 1.5rem;
+  }
+  #BottomTitle {
+      font-size: 2.5rem;
+  }
+  #Slogan {
+      font-size: 1.5rem;
+  }
+  
+}
+
+
+@media (max-width: 768px) {
+  .TM {
+    margin-right: 1%;
+    margin-left: 1%;
+    width: 20%;
+  }
+
+  ul {
+    padding: 5px 0; 
+  }
+  li a {
+    padding: 4px 6px;
+  }
+  .Navlogo{
+    width: 1.25em;
+  }
+
+  .girdWrapper {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
   }
 }
 
+@media (max-width: 1565px ) {
+  #buttonContainter {
+    bottom: 12.5em;
+  }
+}
+
+@media (max-width: 1000px ) {
+  #buttonContainter {
+    bottom: 6.5em;
+  }
+}
