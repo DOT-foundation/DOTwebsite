@@ -55,48 +55,42 @@ left: 0;
 }
 
 #TopTitle{
-color: white;
-font-size: 3vw;
-font-family: Montserrat-BoldItalic;
-text-align: center;
-width: 100%;
-bottom: 2.3em;
-position: relative;
+  text-align: left;
+  color: white;
+  font-size: 3vw;
+  font-family: Montserrat-BoldItalic;
+
+  width: 100%;
+  bottom: 2.3em;
+  position: relative;
 }
 
 #BottomTitle{
-position: relative;
-color: white;
-font-size: 6vw;
-font-family: Montserrat-ExtraBold;
-text-align: center;
-width: 100%;
-bottom: 2em;
+  text-align: left;
+  position: relative;
+  color: white;
+  font-size: 6vw;
+  font-family: Montserrat-ExtraBold;
+
+  width: 40%;
+  bottom: 2em;
 }
 
 #Slogan{
-color: white;
-font-size: 3.4vw;
-font-family: Montserrat-Bold;
-text-align: center;
-width: 100%;
-position: relative;
-bottom: 5.7em;
+  text-align: left;
+  color: white;
+  font-size: 3.4vw;
+  font-family: Montserrat-Bold;
+  
+  width: 100%;
+  position: relative;
+  bottom: 5.7em;
 }
 
-#gridTitle{
-color: white;
-font-family: Montserrat-ExtraBold;
-width: 10em;
-font-size: 250%;
-/* POSITION TEXT */
-position: relative;
-left: 26.6em;
-top: 12.5em;
-}
 
-/* TODO */
-.AboutUs{
+
+
+.OurMission{
   background-color: burlywood;
   width: 80%;
   height: auto;
@@ -114,20 +108,14 @@ top: 12.5em;
   padding-bottom: 1em;
   font-family: Montserrat-Bold;
 }
-
-#AboutImg{
-  width: 15%;
-  height: auto;
-  margin-right: 5%;
-  margin-left: 5%; 
-  display: inline;
+#MissonText{
+  text-align: center;
   position: relative;
-  transition: width 0.3s ease; 
-  transition: transform 0.3s ease; 
-  border-radius: 25px;
-  z-index: 2;
+  font-family: Montserrat-Bold;
+  width: 70%;
+  margin: auto;
 }
-/* TODO */
+
 
 .FoundersDesc{
   background-color: burlywood;
@@ -181,6 +169,8 @@ top: 12.5em;
   position: relative;
   z-index: 1;
   animation: 1s slide-right;
+  transition: width 0.3s ease; 
+  transition: transform 0.3s ease; 
   bottom: 8em;
 }
 .pierceDesc h2{
@@ -235,7 +225,6 @@ top: 12.5em;
 }
 
 
-
 #logo{
   width: 10em;
 }
@@ -251,23 +240,34 @@ top: 12.5em;
 
 
 .box {
-background-color: #F6CF6C;
+background-color: #ffffff;
 border-radius: 0.3125em;
 padding: 1em;
 }
 
 .girdWrapper {
-background-color: transparent;
-width: 37.5em;
-display: grid;
-grid-gap: 0.7em;
-grid-template-columns: repeat(10, 2.125em);
-grid-template-rows: repeat(10, 2.125em);
-grid-auto-flow: column;
+  background-color: transparent;
+  width: 37.5em;
+  display: grid;
+  grid-gap: 0.7em;
+  grid-template-columns: repeat(10, 2.125em);
+  grid-template-rows: repeat(10, 2.125em);
+  grid-auto-flow: column;
 
-/* POSITION GIRD */
-position: relative;
-left: 25em;
+  /* POSITION GIRD */
+  position: relative;
+  left: 90em;
+  bottom: 55em;
+}
+#gridTitle{
+  color: white;
+  font-family: Montserrat-ExtraBold;
+  width: 10em;
+  font-size: 250%;
+  /* POSITION TEXT */
+  position: relative;
+  left: 36.5em;
+  bottom: 8.7em;
 }
 
 ul {
@@ -347,25 +347,32 @@ background-color: #aabc21;
 
 #buttonContainter{
   position: relative; 
-  bottom: 22.5em;
+  top: 5em;
 }
 
 
 
 @media (max-width: 768px) {
   #TopTitle {
-      font-size: 1.5rem;
+      font-size: 1rem;
+      bottom: 9em;
   }
   #BottomTitle {
-      font-size: 2.5rem;
+      font-size: 2rem;
+      bottom: 5em;
+      width: 80%;
   }
   #Slogan {
-      font-size: 1.5rem;
+      font-size: 1rem;
+      bottom: 5em;
   }
   .FoundersDesc{
     bottom: 1em;
   }
-  
+  #MissonText{
+    font-size: 0.5rem;
+    width: 90%;
+  }
 }
 
 @media (max-width: 1400px) {
@@ -374,6 +381,10 @@ background-color: #aabc21;
   }
 
   .sonanDesc{
+    bottom: 1.5em;
+  }
+
+  .OurMission{
     bottom: 1.5em;
   }
   
@@ -403,14 +414,15 @@ background-color: #aabc21;
   }
 }
 
-@media (max-width: 1565px ) {
+@media (max-width: 1865px ) {
   #buttonContainter {
-    bottom: 12.5em;
+    top: 17.5em;
   }
 }
 
 @media (max-width: 1000px ) {
   #buttonContainter {
-    bottom: 6.5em;
+    top: 20.5em;
   }
 }
+
