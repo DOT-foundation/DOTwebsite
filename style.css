@@ -1,13 +1,24 @@
-
 #background-image div {
 	z-index: 99;
 	position: relative;
 }
+
 #background-image {
 	padding: 0px;
+	position: relative;
+	display: block;
+}
+
+#background-image::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	background-size: 100%;
 	background-image: url(./resources/oldLadyBg.jpg);
+	background-size: 125%;
+	background-position: 70%;
 	filter: brightness(60%);
+	z-index: -100;
 }
