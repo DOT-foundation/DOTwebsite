@@ -7,6 +7,8 @@
 	padding: 0px;
 	position: relative;
 	display: block;
+	width: 100vw;
+	height: 100vh;
 }
 
 #background-image::before {
@@ -25,4 +27,12 @@
 
 .fade-in{
 	opacity: 0;
+}
+
+body{
+	overflow-x: hidden;
+}
+
+#header{
+	top: -65px;
 }
