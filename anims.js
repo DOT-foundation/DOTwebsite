@@ -16,5 +16,5 @@ window.onbeforeunload = function () {
 }
 
 $(".founder").mouseover(function () {
-    $(".founder").css("opacity", "0");
+    $(this).css("left", $(this).offset().left).animate({"right": "-1000px"}, 1000)
 });
