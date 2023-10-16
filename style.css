@@ -18,7 +18,11 @@
 	height: 100%;
 	background-image: url(./resources/oldLadyBg.jpg);
 	background-size: 125%;
-	background-position: 70%;
+	background-position: 70% 0%;
 	filter: brightness(60%);
 	z-index: -100;
+}
+
+.fade-in{
+	opacity: 0;
 }
