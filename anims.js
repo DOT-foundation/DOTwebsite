@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $(window).scroll(function () {
-        $("#header").animate({'top': '0px'}, 700);
+        $("#header").animate({ 'top': '0px' }, 700);
+        $(".scroll-text").remove()
         // reduce size of image based on scroll distance
         $("#background-image").css("height", Math.max(0, window.innerHeight - $(this).scrollTop()));
         $('.fade-in').each(function (i) {
@@ -17,7 +18,10 @@ $(document).ready(function () {
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
+let x = 0
+setInterval(() => {
 
-$(".founder").mouseover(function () {
-    $(this).css("left", $(this).offset().left).animate({"right": "-1000px"}, 1000)
-});
+    $(".scroll-text").animate({ 'opacity': Math.abs(Math.sin(x)) }, 10);
+    x += .01
+
+}, 10);
