@@ -36,3 +36,10 @@ body{
 #header{
 	top: -65px;
 }
+
+nav{
+	opacity: 0.6;
+}
+nav:hover{
+	opacity: 1;
+}
