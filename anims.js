@@ -2,8 +2,10 @@ $(document).ready(function () {
     $(window).scroll(function () {
         $("#header").animate({ 'top': '0px' }, 700);
         $(".scroll-text").remove()
-        // reduce size of image based on scroll distance
-        $("#background-image").css("height", Math.max(0, window.innerHeight - $(this).scrollTop()));
+        // reduce size of image based on scroll distance        
+        $("#background-image").css("height", Math.max(50, (1 - (window.scrollY / window.innerHeight)) * 100) + "vh");
+
+        console.log(window.scrollY);
         $('.fade-in').each(function (i) {
             var bottom_of_element = $(this).offset().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height();
