@@ -5,7 +5,6 @@ $(document).ready(function () {
         // reduce size of image based on scroll distance        
         $("#background-image").css("height", Math.max(50, (1 - (window.scrollY / window.innerHeight)) * 100) + "vh");
 
-        console.log(window.scrollY);
         $('.fade-in').each(function (i) {
             var bottom_of_element = $(this).offset().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height();
@@ -27,3 +26,7 @@ setInterval(() => {
     x += .01
 
 }, 10);
+
+$(".founder").hover(function () {
+    $("#founder-desc").text(this.getAttribute("data-description"))
+})

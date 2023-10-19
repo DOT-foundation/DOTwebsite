@@ -43,3 +43,21 @@ nav{
 nav:hover{
 	opacity: 1;
 }
+
+#pierce{
+	background-image: url(./resources/placeholder.png);
+	background-size: 100%;
+}
+
+#sonan{
+	background-image: url(./resources/placeholder.png);
+	background-size: 100%;
+}
+
+.founder:hover{
+	opacity: 0.8;
+}
+
+.founder{
+	opacity: 1;
+}

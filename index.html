@@ -18,7 +18,6 @@
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./style.css">
-	<script src="./anims.js"></script>
 </head>
 
 <body style="margin: 0;">
@@ -55,9 +54,8 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm bg-light rounded" style="margin: 10px;">
-				<p class="lead " style="font-size: 36px;">
-
+			<div class="col-sm " style="margin: 10px;">
+				<p class="lead bg-light rounded" style="font-size: 10; padding: 20px; margin-left: 10vw; margin-right: 10vw;">
 					yak yak yak yak
 					yak yak yak yak
 					yak yak yak yak
@@ -87,18 +85,22 @@
 		</div>
 		<div class="row">
 			
-			<div class="col-sm">
-
+			<div class="col-sm bg-light rounded" style="margin-right: 30px;">
+				<div class="container-fluid px-0 d-block lead " id="founder-desc" style="font-size: 32px; transition: 0.5s">
+					Hover over the founders to learn more
+				</div>
 			</div>
-			<div class="col container-fluid px-0 mx-auto d-block bg-light rounded">
-				<div class="row justify-content-center p-3">
-					<div class="p-9 col">
-						<img src="./resources/placeholder.png" class="rounded img-fluid founder" data-person="Pierce"
-							data-description="ball">
+			<div class="col container-fluid px-0 d-block">
+				<div class="row justify-content-center p-3 bg-light rounded mx-auto">
+					<div class="col founder" id="pierce" style="margin-right: 10px; margin-left: 10px; height: 125%;" data-description="
+					Pierce is a person that exists. His vision of DOT is to create an environment where people can...
+					">
+						<img src="./resources/DOTlogo.png" class="img-thumbnail" style="opacity: 0;"> <!-- DO NOT ASK WHAT THIS DOES YOU CANT REMOVE IT-->
 					</div>
-					<div class="p-9 col justify-content-center content-align-center">
-						<img src="./resources/placeholder.png" class="rounded img-fluid founder" data-person="Pierce"
-							data-description="ball">
+					<div class="col founder" id="sonan" style="margin-right: 10px; margin-left: 10px; height: 125%" data-description="
+					Sonan is a person that exists. His vision of DOT is to create an environment where people can...
+					">
+						<img src="./resources/DOTlogo.png" class="img-thumbnail" style="opacity: 0;" alt="">
 					</div>
 				</div>
 			</div>
