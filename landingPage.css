@@ -15,6 +15,11 @@ font-family: Montserrat-ExtraBoldItalic;
 src: url(Montserrat-ExtraBoldItalic.ttf);
 }
 
+body{
+  background: rgb(128,128,128);
+  background: linear-gradient(360deg, #343a40 0%, rgba(128,128,128,1) 75%);
+}
+
 #main-section {
   /* why tf i need to tell da code this important for it 2 work lmao */
   animation-fill-mode: forwards !important; 
@@ -28,6 +33,19 @@ src: url(Montserrat-ExtraBoldItalic.ttf);
   to {
       opacity: 1;
   }
+}
+
+@keyframes bounce {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+
 }
 
 
@@ -65,6 +83,9 @@ hr{
   width: auto;
   width: 0.5rem;
   height: 0.5rem;
+  opacity: 0;
+  /* why tf i need to tell da code this important for it 2 work lmao */
+  animation-fill-mode: forwards !important;
  
                                      /*▼COLOR OF BOX▼*/
   background: linear-gradient(to top, red 50%, black 50%) top;
