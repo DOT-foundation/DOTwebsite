@@ -15,6 +15,22 @@ font-family: Montserrat-ExtraBoldItalic;
 src: url(Montserrat-ExtraBoldItalic.ttf);
 }
 
+#main-section {
+  /* why tf i need to tell da code this important for it 2 work lmao */
+  animation-fill-mode: forwards !important; 
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
 hr{
   width: 25%;
   margin: auto;
@@ -46,8 +62,23 @@ hr{
   background-color: black;
   border-radius: 0.3125em;
   padding: 1em;
+  width: auto;
+  width: 0.5rem;
+  height: 0.5rem;
+ 
+                                     /*▼COLOR OF BOX▼*/
+  background: linear-gradient(to top, red 50%, black 50%) top;
+  background-size: 200% 200%;
+  transition: 0.5s ease-out;
 }
-  
+
+.box:hover {
+  background-position: bottom;
+  -webkit-box-shadow:0 0 3rem red; /*▼COLOR OF BOX▼*/
+  -moz-box-shadow: 0 0 3rem red; /*▼COLOR OF BOX▼*/
+  box-shadow:0 0 3rem red; /*▼COLOR OF BOX▼*/
+}
+
 .girdWrapper {
   background-color: transparent;
   width: 37.5em;
@@ -58,3 +89,31 @@ hr{
   grid-auto-flow: column;
 }
 
+@media (max-width: 920px) {
+  .box {
+      width: 0.4rem;
+      height: 0.4rem;
+      padding: 0.8em;
+  }
+  .girdWrapper{
+    grid-gap: 0.8em;
+    grid-template-columns: repeat(10, 1.125em);
+    grid-template-rows: repeat(10, 1.125em);
+  }
+  
+}
+
+
+@media (max-width: 290px) {
+  .box {
+      width: 0.4rem;
+      height: 0.4rem;
+      padding: 0.7em;
+  }
+  .girdWrapper{
+    grid-gap: 1em;
+    grid-template-columns: repeat(10, 0.6em);
+    grid-template-rows: repeat(10, 0.6em);
+  }
+  
+}
