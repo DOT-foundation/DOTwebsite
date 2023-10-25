@@ -8,7 +8,6 @@
     <title>Donors of Tomorrow (DOT)</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="landingPage.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -42,13 +41,13 @@
     <section class="jumbotron text-center text-white rounded-0"
         style="background-image: url('NEWBG.png'); background-size: cover; background-repeat: no-repeat; background-position: center center; height: 100vh; position: relative;">
         <div id="main-section">
-            <img src="LOGOfull.png" class="img-fluid">
+            <img src="LOGOfull.png" class="img-fluid" style="height: 50vh;">
             <h1 class="display-4 title-text">Donors of Tomorrow</h1>
             <p class="lead title-text-slogan">light the path away, share the moment today</p>
 
             <a href="#donate" class="btn btn-primary btn-lg button-28 text-light" role="button">Donate Now</a>
-            <a href="#donate" class="btn btn-primary btn-lg button-28 text-light" role="button">Events</a>
-            <a href="#donate" class="btn btn-primary btn-lg button-28 text-light" role="button">Volunteer</a>
+            <a href="#events" class="btn btn-primary btn-lg button-28 text-light" role="button">Events</a>
+            <a href="#volunteer" class="btn btn-primary btn-lg button-28 text-light" role="button">Volunteer</a>
         </div>
     </section>
 
@@ -59,8 +58,9 @@
         <div class="row">
             <div class="col-md-6 text-light">
                 <h2>The Donation Lights</h2>
-                <p>See the difference others have made in real time, light up a block with your donation.</p>
-                <h4>Total Donations: 0</h4>
+                <p>See the difference others have made in real time. <br>For a small amount, you can also stake your
+                    claim in the DOT Foundation</p>
+                <h4 id="donations">Total Donations: 0</h4>
                 <h4>Donations this month: 0</h4>
                 <h4>Lights fill level: 0</h4>
                 <a href="#" class="btn btn-primary">Donate</a>
@@ -72,8 +72,8 @@
                             const wrapper = document.getElementsByClassName("girdWrapper")[0]
                             for (let i = 1; i <= 100; i++) {
                                 // Use Bootstrap columns to make the grid responsive
-                                wrapper.innerHTML += 
-                                `<div class="col-2 col-md-1 mb-1">
+                                wrapper.innerHTML +=
+                                    `<div class="col-2 col-md-1 mb-1">
                                     <div class="box" onmouseenter="editBoxCss(this.id)"  id="box${i}"></div>
                                 </div>`
                             }
@@ -86,14 +86,27 @@
 
     <hr>
 
+    <!-- About us Section -->
+    <section id="About Us" class="py-5" style="background-color: transparent!important;">
+        <div class="container text-center" style="max-width: 40vw;">
+            <h2 class=" text-light">About us</h2>
+            <p class=" text-light">Donors of Tomorrow is a non-profit organization formed by devoted students looking to make a change
+                for the better of the community. We aim to make sure others can find a place in this community, no matter who they are
+                or where they come from.</p>
+        </div>
+        <br>
+        <br>
+        <hr>
+    </section>
+
     <!-- Mission Section -->
     <section id="mission" class="container my-5">
         <div class="row">
             <div class="col-md-6 text-light">
                 <h2>Our Mission</h2>
-                <p>Donors of Tomorrow is a non-profit organization dedicated to supporting the underprivileged,
-                    homeless, children, and disabled individuals in our community. Our mission is to provide essentials,
-                    raise funds, and be the beacon of hope on their path to a brighter future.</p>
+                The DOT Foundation was founded by students dedicated to supporting the underprivileged,
+                homeless, children, and disabled individuals in our community. Our mission is to provide essentials,
+                raise funds, and be the beacon of hope on their path to a brighter future.
             </div>
             <div class="col-md-6">
                 <img src="mission-image.jpg" class="img-fluid" style="max-width: 50%; height: auto;">
@@ -135,6 +148,7 @@
         &copy; 2023 Donors of Tomorrow (DOT) - All rights reserved.
     </footer>
 
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

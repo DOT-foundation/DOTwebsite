@@ -9,25 +9,28 @@ function fadeInMainSection() {
 //Goofy ahh Animate DonoLights fucntion
 let i = 1;
 function fadeInDonoLights() {
-    setTimeout(function() {  
+    setTimeout(function () {
         const box = document.getElementById("box" + i.toString());
         box.style.display = "block";
         box.style.animation = "fadeIn 1s, bounce 1s";
         i++;
         if (i < 101) {
-        fadeInDonoLights();         
-        }           
+            fadeInDonoLights();
+        }
     }, 10);
 }
 
 //Box hover css
+let count = 0
 function editBoxCss(id) {
+    document.getElementById("donations").innerText = `Total Donations: ${++count}`
+
     let color = randomColor();
 
     const box = document.getElementById(id);
 
     const height = box.clientHeight;
-    const backgroundSize = `100% ${height * 2}px`; 
+    const backgroundSize = `100% ${height * 2}px`;
 
     box.style.backgroundSize = backgroundSize;
 
@@ -72,10 +75,10 @@ function editBoxCss(id) {
 function isDivHovered(divId) {
     var div = document.getElementById(divId);
 
-    div.addEventListener("mouseover", function() {
+    div.addEventListener("mouseover", function () {
         return true
     });
-    
+
     return false
 }
 
@@ -90,14 +93,14 @@ function checkVisible(elm, threshold, mode) {
 
     return mode === 'above' ? above : (mode === 'below' ? below : !above && !below);
 }
-function randomColor(){
-    return '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+function randomColor() {
+    return '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
 }
 
 // Call the functions when the page is fully loaded
 window.addEventListener("load", fadeInMainSection);
-window.onscroll = function(){
-    if(checkVisible(document.getElementById("box100"))){
+window.onscroll = function () {
+    if (checkVisible(document.getElementById("box100"))) {
         fadeInDonoLights();
         window.onscroll = null;
     }
