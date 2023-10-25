@@ -20,30 +20,51 @@ function fadeInDonoLights() {
     }, 10);
 }
 
-//Box hover css NOT WORKING 
-// function editBoxCss(){
-//     let color = randomColor();
-//     let box = checkWitchBoxIsHoverd()
-//     console.log(box)
-//     box.style.background = "linear-gradient(to top, " + color + " 50%, black 50%) top;";
-// }
+//Box hover css
+function editBoxCss(id) {
+    let color = randomColor();
+
+    const box = document.getElementById(id);
+    box.style.backgroundColor = color;
+
+    const height = box.clientHeight;
+    const backgroundSize = `100% ${height * 2}px`; 
+
+    box.style.backgroundSize = backgroundSize;
+
+    const hoverStyle = `
+        #${id} {
+            background-position: bottom;
+            background: ${color};
+            background-size: ${backgroundSize};
+            -webkit-box-shadow: 0 0 3rem ${color};
+            -moz-box-shadow: 0 0 3rem ${color};
+            box-shadow: 0 0 3rem ${color};
+        }
+    `;
+
+    //Check if the style element for this box already exists, and remove it if it does
+    const existingStyleElement = document.getElementById(`style-${id}`);
+    if (existingStyleElement) {
+        existingStyleElement.remove();
+    }
+
+    //Create a new style element for this box and add it to the head
+    const styleElement = document.createElement("style");
+    styleElement.id = `style-${id}`;
+    styleElement.innerHTML = hoverStyle;
+    document.head.appendChild(styleElement);
+
+}
+
+
 
 
 
 //Helper functions
-function checkWitchBoxIsHoverd(){
-    for(let i = 1; i<101; i++){
-        if(isDivHovered("box" + i.toString())){
-            console.log(i);
-            console.log(document.getElementById("box" + i.toString()) + " is visable");
-            return document.getElementById("box" + i.toString());
-        }
-    }
-}
-
 function isDivHovered(divId) {
     var div = document.getElementById(divId);
-    
+
     div.addEventListener("mouseover", function() {
         return true
     });
