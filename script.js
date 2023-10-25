@@ -25,7 +25,6 @@ function editBoxCss(id) {
     let color = randomColor();
 
     const box = document.getElementById(id);
-    box.style.backgroundColor = color;
 
     const height = box.clientHeight;
     const backgroundSize = `100% ${height * 2}px`; 
@@ -35,11 +34,19 @@ function editBoxCss(id) {
     const hoverStyle = `
         #${id} {
             background-position: bottom;
+            background: #000000;
+            background-size: ${backgroundSize};
+            transition: 5s ease-out;
+        }
+
+        #${id}:hover {
+            background-position: bottom;
             background: ${color};
             background-size: ${backgroundSize};
-            -webkit-box-shadow: 0 0 3rem ${color};
-            -moz-box-shadow: 0 0 3rem ${color};
-            box-shadow: 0 0 3rem ${color};
+            -webkit-box-shadow: 0 0 5rem ${color};
+            -moz-box-shadow: 0 0 5rem ${color};
+            box-shadow: 0 0 5rem ${color};
+            transition: 0.01s ease;
         }
     `;
 
