@@ -67,8 +67,66 @@ function editBoxCss(id) {
 
 }
 
+//Contact popup
+const contactPopup = document.getElementById("contact-popup");
+const closeContactPopup = document.getElementById("close-contact-popup");
+const contactButton = document.getElementById("contactButton");
+const successPopup = document.getElementById("success-popup");
+const closeSuccessPopup = document.getElementById("close-success-popup");
+
+//Show the success pop-up
+function showSuccessPopup(msg){
+    successPopup.style.display = "block";
+    document.getElementById("success-status").innerHTML = msg;
+}
+
+//close success pop-up
+closeSuccessPopup.addEventListener("click", function (){
+    successPopup.style.display = "none";
+});
 
 
+//open the pop-up
+contactButton.addEventListener("click", function (){
+    contactPopup.style.display = "block";
+});
+
+//Close the pop-up
+closeContactPopup.addEventListener("click", function (){
+    contactPopup.style.display = "none";
+});
+
+//close it when clicked outside
+window.addEventListener("click", function (event){
+    if (event.target == contactPopup) {
+        contactPopup.style.display = "none";
+    }
+});
+window.addEventListener("click", function (event){
+    if (event.target == successPopup) {
+        successPopup.style.display = "none";
+    }
+});
+
+//Handle form submission
+const contactForm = document.getElementById("contact-form");
+contactForm.addEventListener("submit", function (event){
+    event.preventDefault();
+
+    const message = document.getElementById("message").value;
+
+    //ADD CODE TO SEND EMAIL WE CAN USE MAILTRAP OR NODE JS
+    
+    contactPopup.style.display = "none";
+
+    //ADD REAL LOGIC TO SEE IF EMAIL SENT
+    if(true){
+        showSuccessPopup("Email sent successfully.");
+    }
+    else{
+        showSuccessPopup("Error! please try again later.")
+    }
+});
 
 
 //Helper functions

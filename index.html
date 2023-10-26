@@ -13,7 +13,7 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><img src="LOGOicon.png" class="img-fluid" id="navLogo"></a>
+        <a class="navbar-brand" href="#"><img src="LOGOfull.png" class="img-fluid" id="navLogo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,7 +41,7 @@
     <section class="jumbotron text-center text-white rounded-0"
         style="background-image: url('NEWBG.png'); background-size: cover; background-repeat: no-repeat; background-position: center center; height: 100vh; position: relative;">
         <div id="main-section">
-            <img src="LOGOfull.png" class="img-fluid" style="height: 50vh;">
+            <img src="LOGOicon.png" class="img-fluid" id="mainIcon">
             <h1 class="display-4 title-text">Donors of Tomorrow</h1>
             <p class="lead title-text-slogan">light the path away, share the moment today</p>
 
@@ -71,7 +71,7 @@
                         <script>
                             const wrapper = document.getElementsByClassName("girdWrapper")[0]
                             for (let i = 1; i <= 100; i++) {
-                                // Use Bootstrap columns to make the grid responsive
+                                // Use Bootstrap columns & JS to make the grid responsive
                                 wrapper.innerHTML +=
                                     `<div class="col-2 col-md-1 mb-1">
                                     <div class="box" onmouseenter="editBoxCss(this.id)"  id="box${i}"></div>
@@ -81,6 +81,40 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <hr>
+    
+    <!-- Events Section MAY MOVE THIS TO ANOTHER PAGE JUST TEMP TESING FOR NOW--> 
+    <section id="events" class="container my-5">
+        <h2 class="text-light">Upcoming Events</h2>
+
+        <div class="timeline">
+            <!-- Event Item 1 -->
+            <div class="event-item">
+                <div class="event-date">
+                    <span class="date">Date</span>
+                    <span class="month">Month</span>
+                </div>
+                <div class="event-details">
+                    <h3 class="event-title">Event Title 1</h3>
+                    <p class="event-description">Description of Event 1.</p>
+                </div>
+            </div>
+
+            <!-- Event Item 2 -->
+            <div class="event-item">
+                <div class="event-date">
+                    <span class="date">Date</span>
+                    <span class="month">Month</span>
+                </div>
+                <div class="event-details">
+                    <h3 class="event-title">Event Title 2</h3>
+                    <p class="event-description">Description of Event 2.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -140,8 +174,37 @@
     <section id="contact" class="bg-dark text-white py-4 text-center">
         <h2>Contact Us</h2>
         <p>If you have any questions or inquiries, please feel free to reach out to us. We are here to help!</p>
-        <a href="contact.html" class="btn btn-primary">Contact Now</a>
+        <a id="contactButton" class="btn btn-primary">Contact Now</a>
     </section>
+    <!-- Contact Pop-up -->
+    <div id="contact-popup" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-contact-popup">&times;</span>
+            <h2>Contact Us</h2>
+            <p>If you have any questions or inquiries, please feel free to reach out to us. We are here to help!</p>
+            <div>
+                <p>Follow us on social media:</p>
+                <a href="your-social-media-link" target="_blank">Social Media 1</a>
+                <a href="your-social-media-link" target="_blank">Social Media 2</a>
+                <a href="your-social-media-link" target="_blank">Social Media 3</a>
+            </div>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Email</button>
+            </form>
+        </div>
+    </div>
+    <!-- Pop-up for Success Message -->
+    <div id="success-popup" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-success-popup">&times;</span>
+            <h2>Success!</h2>
+            <p id="success-status">Error.</p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
