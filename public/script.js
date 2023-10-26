@@ -110,17 +110,32 @@ window.addEventListener("click", function (event){
 
 //Handle form submission
 const contactForm = document.getElementById("contact-form");
-contactForm.addEventListener("submit", function (event){
+contactForm.addEventListener("submit", async function (event){
     event.preventDefault();
 
+    const name = document.getElementById("name").value;
     const message = document.getElementById("message").value;
 
     //ADD CODE TO SEND EMAIL WE CAN USE MAILTRAP OR NODE JS
+    // SIR YES SIR
+
+    const emailRequest = await (fetch("/contact-us", {
+        method: "POST",
+        headers: {
+            'Accept': "application/json",
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            message: message
+        })
+    }))
+    const result = await emailRequest.json()
     
     contactPopup.style.display = "none";
 
     //ADD REAL LOGIC TO SEE IF EMAIL SENT
-    if(true){
+    if(result["success"]){
         showSuccessPopup("Email sent successfully.");
     }
     else{

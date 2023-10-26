@@ -15,12 +15,19 @@ app.use(express.static('public'));
  * }
  */
 app.post('/contact-us', (req, res) => {
-	console.log("Got a request");
 	const { name, message } = req.body;
-	console.log(req.body);
+	console.log("message: " + JSON.stringify(req.body));
 
+	// TODO USE GOOGLE XOATH2 INSTEAD OF U/PASS
+	// https://stackoverflow.com/questions/31473292/etimedout-connect-error-using-nodemailer-in-nodejs-openshift-application
 	let transporter = nodemailer.createTransport({
-		service: 'gmail',
+		name: 'smtp.gmail.com',
+		host: 'smtp.gmail.com',
+		port: 587, 
+		secure: false,
+		requireTLS: true,
+		logger: true,
+		debug: true,
 		auth: {
 			user: process.env.email,
 			pass: process.env.password
@@ -34,9 +41,12 @@ app.post('/contact-us', (req, res) => {
 		text: message
 	};
 
+
+	console.log("Sending email...");
 	transporter.sendMail(mailOptions, function (error, info) {
 		if (error) {
 			console.log(error);
+			res.send("{success: false}")
 		} else {
 			console.log('Email sent: ' + info.response);
 			res.send("{success: true}");
@@ -50,6 +60,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-	console.log(`Email API listening at :${process.env.PORT}/contact-us`);
+	console.log(`Email API listening at :${process.env.PORT}/contact-us using user ${process.env.email}`);
 	console.log(`Website listening at :${process.env.PORT}/`);
 })

@@ -18,6 +18,7 @@ src: url(Montserrat-ExtraBoldItalic.ttf);
 body{
   background: rgb(128,128,128);
   background: linear-gradient(360deg, #343a40 0%, rgba(128,128,128,1) 75%);
+  scroll-behavior: smooth; 
 }
 
 #main-section {

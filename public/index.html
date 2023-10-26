@@ -123,7 +123,7 @@
     <!-- About us Section -->
     <section id="About Us" class="py-5" style="background-color: transparent!important;">
         <div class="container text-center">
-            <h2 class=" text-light">About us</h2>
+            <h2 class=" text-light">About Us</h2>
             <p class=" text-light">Donors of Tomorrow is a non-profit organization formed by devoted students looking to make a change
                 for the better of the community. We aim to make sure others can find a place in this community, no matter who they are
                 or where they come from.</p>
@@ -177,7 +177,7 @@
         <a id="contactButton" class="btn btn-primary">Contact Now</a>
     </section>
     <!-- Contact Pop-up -->
-    <div id="contact-popup" class="modal">
+    <div id="contact-popup" class="modal" style="overflow: hidden;">
         <div class="modal-content">
             <span class="close" id="close-contact-popup">&times;</span>
             <h2>Contact Us</h2>
@@ -190,6 +190,8 @@
             </div>
             <form id="contact-form">
                 <div class="form-group">
+                    <label for="message">Name:</label>
+                    <textarea id="name" name="name" rows="1" placeholder="Anonymous" style="resize: none;"></textarea>
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="4" required></textarea>
                 </div>
