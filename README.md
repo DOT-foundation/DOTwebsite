@@ -7,18 +7,19 @@ Run `node .` to start webpage at .env PORT, default `:8080`.
 
 Email API:
 
-`/contact-us`:
 
 Frontend
 
-  POST request with body:
+  `/contact-us`:
   
-    ```
-    {
-      "name":"Name",
-      "message": "Message"
-    }
-    ```
+    POST request with body:
+    
+      ```
+      {
+        "name":"Name",
+        "message": "Message"
+      }
+      ```
 
 Backend
 
