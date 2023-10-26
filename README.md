@@ -14,12 +14,10 @@ Frontend
   
     POST request with body:
     
-      ```
       {
         "name":"Name",
         "message": "Message"
       }
-      ```
 
 Backend
 
