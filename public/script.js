@@ -8,16 +8,30 @@ function fadeInMainSection() {
 
 //Goofy ahh Animate DonoLights fucntion
 let i = 1;
-function fadeInDonoLights() {
-    setTimeout(function () {
-        const box = document.getElementById("box" + i.toString());
-        box.style.display = "block";
-        box.style.animation = "fadeIn 1s, bounce 1s";
-        i++;
-        if (i < 101) {
-            fadeInDonoLights();
-        }
-    }, 10);
+let z = 101;
+function fadeInDonoLights(lightType) {
+    if(lightType==1){
+        setTimeout(function () {
+            const box = document.getElementById("box" + i.toString());
+            box.style.display = "block";
+            box.style.animation = "fadeIn 1s, bounce 1s";
+            i++;
+            if (i < 101) {
+                fadeInDonoLights(1);
+            }
+        }, 10);
+    }
+    else{
+        setTimeout(function () {
+            const box = document.getElementById("box" + z.toString());
+            box.style.display = "block";
+            box.style.animation = "fadeIn 1s, bounce 1s";
+            z++;
+            if (z < 201) {
+                fadeInDonoLights(2);
+            }
+        }, 10);
+    }
 }
 
 //Box hover css
@@ -46,9 +60,9 @@ function editBoxCss(id) {
             background-position: bottom;
             background: ${color};
             background-size: ${backgroundSize};
-            -webkit-box-shadow: 0 0 5rem ${color};
-            -moz-box-shadow: 0 0 5rem ${color};
-            box-shadow: 0 0 5rem ${color};
+            -webkit-box-shadow: 0 0 5rem 1rem ${color};
+            -moz-box-shadow: 0 0 5rem 1rem ${color};
+            box-shadow: 0 0 5rem 1rem ${color};
             transition: 0.01s ease;
         }
     `;
@@ -146,7 +160,7 @@ contactForm.addEventListener("submit", async function (event){
 
 //Helper functions
 function isDivHovered(divId) {
-    var div = document.getElementById(divId);
+    let div = document.getElementById(divId);
 
     div.addEventListener("mouseover", function () {
         return true
@@ -159,29 +173,49 @@ function checkVisible(elm, threshold, mode) {
     threshold = threshold || 0;
     mode = mode || 'visible';
 
-    var rect = elm.getBoundingClientRect();
-    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-    var above = rect.bottom - threshold < 0;
-    var below = rect.top - viewHeight + threshold >= 0;
+    let rect = elm.getBoundingClientRect();
+    let viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    let above = rect.bottom - threshold < 0;
+    let below = rect.top - viewHeight + threshold >= 0;
 
     return mode === 'above' ? above : (mode === 'below' ? below : !above && !below);
 }
 function randomColor() {
-    return '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+    return `hsla(${~~(360 * Math.random())}, 70%,  50%, 0.8)`
 }
 
 // Call the functions when the page is fully loaded
 window.addEventListener("load", fadeInMainSection);
 window.onscroll = function () {
     if (checkVisible(document.getElementById("box100"))) {
-        fadeInDonoLights();
+        fadeInDonoLights(1);
         window.onscroll = null;
     }
 }
 
+// STRIPE CODE
+let stripe = Stripe('add_our_publishable_key');
+let donateButton = document.getElementById("donate-button");
+let modal = document.getElementById("donation-modal");
+let closeDonationModal = document.getElementById("close-donation-modal");
 
+donateButton.addEventListener("click", function() {
+    modal.style.display = "block";
+    fadeInDonoLights(2);
+});
 
+closeDonationModal.addEventListener("click", function() {
+    modal.style.display = "none";
+});
 
+//sumbit donoatiion
+var donationForm = document.getElementById("donation-form");
+var donateNowButton = document.getElementById("donate-now-button");
+
+function sendDono(lightId, color, ShowAmt, ShowName) {
+    // ADD REAL CODE TO HANDLE PAYMENT WITH STRIPE HERE
+    console.log("DONO REQ RECV", lightId, color, ShowAmt, ShowName);
+};
 
 
 

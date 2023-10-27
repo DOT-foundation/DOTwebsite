@@ -247,6 +247,7 @@ hr{
   color: #ccc;
 }
 
+
 @media (max-width: 768px) {
   .event-item {
       flex-direction: column;
