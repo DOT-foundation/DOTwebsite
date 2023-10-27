@@ -311,7 +311,7 @@
                 <label for="amount">Donation Amount:</label>
                 <input type="text" id="amount" name="amount" placeholder="Enter donation amount">
                 <div id="card-element"></div>
-                <button id="donate-now-button" onclick="sendDono(currentID, document.getElementById('lightColor').value, document.getElementById('showDonationAmount').checked, document.getElementById('showName').checked); return false;">Donate Now</button>
+                <button id="donate-now-button" onclick="sendDono(document.getElementById('amount').value, currentID, document.getElementById('lightColor').value, document.getElementById('showDonationAmount').checked, document.getElementById('showName').checked); return false;">Donate Now</button>
             </form>
         </div>
     </div>

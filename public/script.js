@@ -212,9 +212,9 @@ closeDonationModal.addEventListener("click", function() {
 var donationForm = document.getElementById("donation-form");
 var donateNowButton = document.getElementById("donate-now-button");
 
-function sendDono(lightId, color, ShowAmt, ShowName) {
+function sendDono(DonoAmt, lightId, color, ShowAmt, ShowName) {
     // ADD REAL CODE TO HANDLE PAYMENT WITH STRIPE HERE
-    console.log("DONO REQ RECV", lightId, color, ShowAmt, ShowName);
+    console.log("DONO REQ RECV", DonoAmt, lightId, color, ShowAmt, ShowName);
 };
 
 
