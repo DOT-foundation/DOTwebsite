@@ -24,8 +24,7 @@ app.post('/contact-us', (req, res) => {
 		name: process.env.email_host,
 		host: process.env.email_host,
 		port: process.env.email_port, 
-		secure: false,
-		requireTLS: true,
+		secure: true,
 		logger: true,
 		debug: true,
 		auth: {
