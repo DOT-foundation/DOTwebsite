@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="icon" href="DOTlogo.png">
     <title>Donors of Tomorrow (DOT)</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -13,15 +13,10 @@
     <!-- MDB icon -->
     <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
 
@@ -31,7 +26,7 @@
 </head>
 
 <body>
-    <!-- Navigation Bar --> 
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#"><img src="LOGOfull.png" class="img-fluid" id="navLogo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -65,7 +60,8 @@
             <h1 class="display-4 title-text">Donors of Tomorrow</h1>
             <p class="lead title-text-slogan">light the path away, share the moment today</p>
 
-            <a href="#donate" class="btn btn-primary btn-lg button-28 text-light" id="donate-button" role="button">Donate Now</a>
+            <a href="#donate" class="btn btn-primary btn-lg button-28 text-light" id="donate-button"
+                role="button">Donate Now</a>
             <a href="#events" class="btn btn-primary btn-lg button-28 text-light" role="button">Events</a>
             <a href="#volunteer" class="btn btn-primary btn-lg button-28 text-light" role="button">Volunteer</a>
         </div>
@@ -105,8 +101,8 @@
     </section>
 
     <hr>
-    
-    <!-- Events Section MAY MOVE THIS TO ANOTHER PAGE JUST TEMP TESING FOR NOW--> 
+
+    <!-- Events Section MAY MOVE THIS TO ANOTHER PAGE JUST TEMP TESING FOR NOW-->
     <section id="events" class="container my-5">
         <h2 class="text-light">Upcoming Events</h2>
 
@@ -144,8 +140,10 @@
     <section id="About Us" class="py-5" style="background-color: transparent!important;">
         <div class="container text-center">
             <h2 class=" text-light">About Us</h2>
-            <p class=" text-light">Donors of Tomorrow is a non-profit organization formed by devoted students looking to make a change
-                for the better of the community. We aim to make sure others can find a place in this community, no matter who they are
+            <p class=" text-light">Donors of Tomorrow is a non-profit organization formed by devoted students looking to
+                make a change
+                for the better of the community. We aim to make sure others can find a place in this community, no
+                matter who they are
                 or where they come from.</p>
         </div>
         <br>
@@ -231,8 +229,10 @@
     <!-- DONATION POPUP -->
     <div id="donation-modal" class="modal">
         <div class="modal-content" style="width: auto;">
-            <span id="close-donation-modal" class="close">&times;</span>
-            <h2>Donate to Donors of Tomorrow</h2>
+            <h2>Donate to Donors of Tomorrow
+                <span id="close-donation-modal" class="close"
+                    style="margin-right: 0px;">&times;</span>
+            </h2>
             <div class="row">
                 <div class="col-md-6">
                     <!-- Customization Options -->
@@ -256,10 +256,10 @@
                         <label class="form-check-label" for="showName">Show Name</label>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <!-- Dono Lights -->
-                    <div class="girdWrapper" id="gw2">
+                    <br>
+                    <div class="girdWrapper" id="gw2" style="margin-right:5em">
                         <script>
                             // I might have added a lil 2 much embeded JS
                             const wrapper2 = document.getElementById("gw2");
@@ -272,31 +272,31 @@
                                 light.innerHTML = `<div class="box" id="box${i}"></div>`;
 
                                 // Add event listener
-                                light.addEventListener("click", function() {
+                                light.addEventListener("click", function () {
                                     lightClicked(i);
                                 });
 
                                 wrapper2.appendChild(light);
-                            }       
+                            }
 
                             function lightClicked(lightNumber) {
                                 currentID = lightNumber;
                                 document.getElementById("lightSelect").innerHTML = "Light Selected: " + (lightNumber - 100);
                                 document.getElementById("box" + lightNumber).style.background = "red";
-                                
+
                                 const selectedColor = document.getElementById("lightColor").value;
                                 document.getElementById("box" + lightNumber).style.background = selectedColor;
 
-                                if(lastId!=null){
+                                if (lastId != null) {
                                     document.getElementById("box" + lastId).style.background = "linear-gradient(to top, red 50%, black 50%) top";
                                     document.getElementById("box" + lastId).style.backgroundSize = "200% 200%";
-                                    
+
                                 }
                                 lastId = lightNumber
                             }
                             // Add an event listener to the color input field
                             const lightColorInput = document.getElementById("lightColor");
-                            lightColorInput.addEventListener("input", function() {
+                            lightColorInput.addEventListener("input", function () {
                                 if (currentID !== null) {
                                     const selectedColor = lightColorInput.value;
                                     document.getElementById("box" + currentID).style.background = selectedColor;
@@ -306,12 +306,14 @@
                     </div>
                 </div>
             </div>
-
+            <br>
             <form id="donation-form">
                 <label for="amount">Donation Amount:</label>
                 <input type="text" id="amount" name="amount" placeholder="Enter donation amount">
                 <div id="card-element"></div>
-                <button id="donate-now-button" onclick="sendDono(document.getElementById('amount').value, currentID, document.getElementById('lightColor').value, document.getElementById('showDonationAmount').checked, document.getElementById('showName').checked); return false;">Donate Now</button>
+                <button id="donate-now-button"
+                    onclick="sendDono(document.getElementById('amount').value, currentID, document.getElementById('lightColor').value, document.getElementById('showDonationAmount').checked, document.getElementById('showName').checked); return false;">Donate
+                    Now</button>
             </form>
         </div>
     </div>
