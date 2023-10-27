@@ -21,9 +21,9 @@ app.post('/contact-us', (req, res) => {
 	// TODO USE GOOGLE XOATH2 INSTEAD OF U/PASS
 	// https://stackoverflow.com/questions/31473292/etimedout-connect-error-using-nodemailer-in-nodejs-openshift-application
 	let transporter = nodemailer.createTransport({
-		name: 'smtp.gmail.com',
-		host: 'smtp.gmail.com',
-		port: 587, 
+		name: process.env.email_host,
+		host: process.env.email_host,
+		port: process.env.email_port, 
 		secure: false,
 		requireTLS: true,
 		logger: true,
