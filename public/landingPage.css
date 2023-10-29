@@ -49,6 +49,12 @@ body{
 
 }
 
+.vertical-line {
+  border-left: 0.1rem solid gray;
+  height: 12rem;
+  margin: auto; 
+}
+
 
 hr{
   width: 25%;
@@ -335,6 +341,12 @@ hr{
     grid-template-rows: repeat(10, 0.6em);
   }
   
+}
+
+@media (max-width: 768px){
+  .vertical-line{
+    display: none;
+  }
 }
 
 @media (max-height: 738px){

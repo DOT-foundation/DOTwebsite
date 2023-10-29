@@ -23,6 +23,8 @@
     <!-- STRIPE CODE -->
     <script src="https://js.stripe.com/v3/"></script>
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -136,36 +138,34 @@
 
     <hr>
 
-    <!-- About us Section -->
-    <section id="About Us" class="py-5" style="background-color: transparent!important;">
-        <div class="container text-center">
-            <h2 class=" text-light">About Us</h2>
-            <p class=" text-light">Donors of Tomorrow is a non-profit organization formed by devoted students looking to
-                make a change
-                for the better of the community. We aim to make sure others can find a place in this community, no
-                matter who they are
-                or where they come from.</p>
-        </div>
-        <br>
-        <br>
-        <hr>
-    </section>
-
-    <!-- Mission Section -->
-    <section id="mission" class="container my-5">
+    <!-- About us Section AND Mission Section -->
+    <section id="AboutAndMission" class="container my-5">
         <div class="row">
-            <div class="col-md-6 text-light">
-                <h2>Our Mission</h2>
-                The DoTo Foundation was founded by students dedicated to supporting the underprivileged,
-                homeless, children, and disabled individuals in our community. Our mission is to provide essentials,
-                raise funds, and be the beacon of hope on their path to a brighter future.
+            <div class="col-md-5">
+                <div class="container">
+                    <h2 class="text-light">About Us</h2>
+                    <p class="text-light">Donors of Tomorrow is a non-profit organization formed by devoted students looking to
+                        make a change for the better of the community. We aim to make sure others can find a place in this community, no
+                        matter who they are or where they come from.</p>
+                </div>
+                <br>
+                <br>
             </div>
-            <div class="col-md-6">
-                <img src="mission-image.jpg" class="img-fluid" style="max-width: 50%; height: auto;">
+
+            <div class="vertical-line"></div>
+
+            <div class="col-md-5">
+                    <div class="container">
+                    <div class="text-light">
+                        <h2>Our Mission</h2>
+                        The DoTo Foundation was founded by students dedicated to supporting the underprivileged,
+                        homeless, children, and disabled individuals in our community. Our mission is to provide essentials,
+                        raise funds, and be the beacon of hope on their path to a brighter future.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
     <hr>
 
     <!-- Founders Section -->
@@ -324,7 +324,8 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- THIS JQUERY IMPORT BROKE MY PHP IDK WHY -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

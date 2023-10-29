@@ -1,4 +1,3 @@
-
 //Animate main section
 function fadeInMainSection() {
     const mainSection = document.getElementById("main-section");
@@ -37,43 +36,88 @@ function fadeInDonoLights(lightType) {
 //Box hover css
 let count = 0
 function editBoxCss(id) {
-    document.getElementById("donations").innerText = `Total Donations: ${++count}`
+    if(lightData != [] && lightData[id.replace(/box/g, '')-1].DonationAmount == "-1"){
+        document.getElementById("donations").innerText = `Total Donations: ${++count}`
 
-    let color = randomColor();
+        let color = randomColor();
 
-    const box = document.getElementById(id);
+        const box = document.getElementById(id);
+        box.classList.add("box");
+
+        const height = box.clientHeight;
+        const backgroundSize = `100% ${height * 2}px`;
+
+        box.style.backgroundSize = backgroundSize;
+
+        const hoverStyle = `
+            #${id} {
+                background-position: bottom;
+                background: #000000;
+                background-size: ${backgroundSize};
+                transition: 5s ease-out;
+            }
+
+            #${id}:hover {
+                background-position: bottom;
+                background: ${color};
+                background-size: ${backgroundSize};
+                -webkit-box-shadow: 0 0 5rem 1rem ${color};
+                -moz-box-shadow: 0 0 5rem 1rem ${color};
+                box-shadow: 0 0 5rem 1rem ${color};
+                transition: 0.01s ease;
+            }
+        `;
+
+        //Check if the style element for this box already exists, and remove it if it does
+        const existingStyleElement = document.getElementById(`style-${id}`);
+        if (existingStyleElement) {
+            existingStyleElement.remove();
+        }
+
+        //Create a new style element for this box and add it to the head
+        const styleElement = document.createElement("style");
+        styleElement.id = `style-${id}`;
+        styleElement.innerHTML = hoverStyle;
+        document.head.appendChild(styleElement);
+    }
+
+}
+function editBoxCssColor(id, pcolor) {
+    document.getElementById("donations").innerText = `Total Donations: ${++count}`;
+
+    let color = pcolor;
+
+    const box = document.getElementById("box" + id);
 
     const height = box.clientHeight;
     const backgroundSize = `100% ${height * 2}px`;
 
     box.style.backgroundSize = backgroundSize;
+    box.style.background     = color;
+    box.classList.remove("box");
 
     const hoverStyle = `
         #${id} {
             background-position: bottom;
-            background: #000000;
+            background: ${color};
+            background-color: ${color};
             background-size: ${backgroundSize};
-            transition: 5s ease-out;
-        }
-
-        #${id}:hover {
             background-position: bottom;
             background: ${color};
-            background-size: ${backgroundSize};
             -webkit-box-shadow: 0 0 5rem 1rem ${color};
             -moz-box-shadow: 0 0 5rem 1rem ${color};
             box-shadow: 0 0 5rem 1rem ${color};
-            transition: 0.01s ease;
-        }
+            opacity: 100;
+        }   
     `;
 
-    //Check if the style element for this box already exists, and remove it if it does
+    // Check if the style element for this box already exists, and remove it if it does
     const existingStyleElement = document.getElementById(`style-${id}`);
     if (existingStyleElement) {
         existingStyleElement.remove();
     }
 
-    //Create a new style element for this box and add it to the head
+    // Create a new style element for this box and add it to the head
     const styleElement = document.createElement("style");
     styleElement.id = `style-${id}`;
     styleElement.innerHTML = hoverStyle;
@@ -209,8 +253,8 @@ closeDonationModal.addEventListener("click", function() {
 });
 
 //sumbit donoatiion
-var donationForm = document.getElementById("donation-form");
-var donateNowButton = document.getElementById("donate-now-button");
+let donationForm = document.getElementById("donation-form");
+let donateNowButton = document.getElementById("donate-now-button");
 
 function sendDono(DonoAmt, lightId, color, ShowAmt, ShowName) {
     // ADD REAL CODE TO HANDLE PAYMENT WITH STRIPE HERE
@@ -219,59 +263,139 @@ function sendDono(DonoAmt, lightId, color, ShowAmt, ShowName) {
 
 
 
+//Functions to grab light data 
+function fetchData() {
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        url: "fetchData.php",
+        type: "GET",
+        dataType: "json",
+        success: function(response) {
+          if (response.success) {
+            resolve(response.data);
+          } else {
+            console.log("Error: " + response.message);
+            reject("Data retrieval failed.");
+          }
+        },
+        error: function(xhr, status, error) {
+          console.log("Error: " + error);
+          reject("Data retrieval failed.");
+        }
+      });
+    });
+}
 
-// //---- NON WORKING PHP STUFF FOR DONO LIGHTS ----
-// //fetch the color list from the server
-// function fetchColors() {
-//     fetch('fetch_colors.php')
-//         .then(response => response.json())
-//         .then(data => {
-//             if (data.success) {
-//                 displayColors(data.colors);
-//             } else {
-//                 console.error('Failed to fetch colors: ' + data.message);
-//             }
-//         });
-// }
+function grabFetchedData(){
+    return fetchData()
+    .then(function(data) {
+        return data
+    })
+    .catch(function(error) {
+        return false
+    });
+}
 
-// //Assign colors
-// function assignColorsToBoxes(colors) {
-//     const boxElements = document.querySelectorAll('.box');
+//Push data to SQL server
+function pushData(index, donationAmount, donationTime, lightColor, lightID, showName, showAmount) {
+    //Had to make the code promise me it would wrork ykyk
+    return new Promise(function(resolve, reject) {
+        var data = {
+            index: index,
+            donationAmount: donationAmount,
+            donationTime: donationTime,
+            lightColor: lightColor,
+            lightID: lightID,
+            showName: showName,
+            showAmount: showAmount
+        };
 
-//     for (let i = 0; i < boxElements.length; i++) {
-//         if (colors[i]) {
-//             boxElements[i].style.backgroundColor = colors[i];
-//         }
-//     }
-// }
+        //send an AJAX request 
+        $.ajax({
+            type: "POST",
+            url: "pushDATA.php",
+            data: data,
+            success: function(response) {
+                //handle the response
+                resolve(response);
+            },
+            error: function() {
+                console.log("Error updating database");
+                reject("Error updating database"); //Reject the Promise in case of an error (i hate the code if it dose this)
+            }
+        });
+    });
+}
 
-// //add a new color
-// function addColor() {
-//     const newColorInput = document.getElementById('newColor');
-//     const newColor = newColorInput.value;
+//Update lights
+async function updateLights() {
+    try {
+      const data = await fetchData();
+      if (data) {
+        data.forEach(function(row) {
+            const box = document.getElementById("box" + row.LightID);
+            //See if light needs to be shutoff
+            const boxLife =  row.DonationAmount * 2//1$ = 2 hours
 
-//     fetch('update_colors.php', {
-//         method: 'POST',
-//         body: JSON.stringify({ color: newColor }),
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     })
-//         .then(response => response.json())
-//         .then(data => {
-//             if (data.success) {
-//                 fetchColors(); //Refresh the color list after adding a new color
-//                 newColorInput.value = ''; //Clear the input field
-//             } else {
-//                 console.error('Failed to add color: ' + data.message);
-//             }
-//         });
-// }
+            const timestampString = row.DonationTime;
+            const timestamp = new Date(timestampString);
+            const currentTime = new Date();
+            const timeDifference = currentTime - timestamp;
+            const hoursPassed = timeDifference / (1000 * 60 * 60);
 
-// //Initial fetch to load the colors when the page loads
-// fetchColors()
-//     .then(data => {
-//         if (data.success) {
-//             assignColorsToBoxes(data.colors);
-//         }
-//     });
+            if(hoursPassed > boxLife){
+                // MAKE TIMESTAMP
+                const currentTime = new Date();
+                const year = currentTime.getFullYear();
+                const month = (currentTime.getMonth() + 1).toString().padStart(2, '0');
+                const day = currentTime.getDate().toString().padStart(2, '0');
+                const hours = currentTime.getHours().toString().padStart(2, '0');
+                const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+                const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+                const timestamp = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+                pushData(row.LightID.toString(), "-1", timestamp, "", row.LightID.toString(), "0", "0") //unlight light if time it up
+                .then(function(response) {
+                    //pass
+                })
+                .catch(function(error) {
+                    console.log("Error: " + error); //BoOoOoOooo... spooky! (im going insane)
+                });
+                
+            }
+            else{
+                if(row.LightColor != undefined){
+                    console.log(row.LightID)
+                    editBoxCssColor(row.LightID, "red");
+                }
+                else{
+                    box.style.color = "black";
+                }
+            }
+        });
+      } else {
+        console.log("Error fetching light data");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+
+let lightData = [];
+
+function fetchAndUseLightData() {
+grabFetchedData()
+    .then(data => {
+    lightData = data;
+    })
+    .catch(error => {
+    console.error(error);
+    });
+}
+
+
+fetchAndUseLightData();
+
+const lightUpdate = setInterval(updateLights, 5000);
+ 
