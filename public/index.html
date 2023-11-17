@@ -29,7 +29,7 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg bg-light">
         <a class="navbar-brand" href="#"><img src="LOGOfull.png" class="img-fluid" id="navLogo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,25 +55,59 @@
 
 
     <!-- Main Image Section -->
-    <section class="jumbotron text-center text-white rounded-0"
-        style="background-image: url('NEWBG.png'); background-size: cover; background-repeat: no-repeat; background-position: center center; height: 100vh; position: relative;">
+    <section class="jumbotron text-center text-white rounded-0" style="background-image: url('NEWBG.png'); background-size: cover; background-repeat: no-repeat; background-position: center center; height: 85vh; position: relative;">
         <div id="main-section">
-            <img src="LOGOicon.png" class="img-fluid" id="mainIcon">
+            <hr style="background-color: rgb(174, 174, 28); height: 0.3rem; width: 35%; margin-bottom: 1rem; margin-top: 10rem;">
+            <!-- <img src="LOGOicon.png" class="img-fluid" id="mainIcon"> -->
             <h1 class="display-4 title-text">Donors of Tomorrow</h1>
-            <p class="lead title-text-slogan">light the path away, share the moment today</p>
+            <p class="lead title-text-slogan">Each one of us has the ability to make a change for the better in our community</p>
 
-            <a href="#donate" class="btn btn-primary btn-lg button-28 text-light" id="donate-button"
-                role="button">Donate Now</a>
+            <a href="#donate" class="btn btn-primary btn-lg button-28 text-light" id="donate-button" role="button">Donate Now</a>
             <a href="#events" class="btn btn-primary btn-lg button-28 text-light" role="button">Events</a>
             <a href="#volunteer" class="btn btn-primary btn-lg button-28 text-light" role="button">Volunteer</a>
         </div>
+
+        <!-- Events Section MAY MOVE THIS TO ANOTHER PAGE JUST TEMP TESING FOR NOW-->
+        <section id="events" class="container my-5">
+            <h2 class="text-light">Upcoming Events</h2>
+
+            <div class="timeline">
+                <!-- Event Item 1 -->
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="date">Date</span>
+                        <span class="month">Month</span>
+                    </div>
+                    <div class="event-details">
+                        <h3 class="event-title">Event Title 1</h3>
+                        <p class="event-description">Description of Event 1.</p>
+                    </div>
+                </div>
+
+                <!-- Event Item 2 -->
+                <div class="event-item">
+                    <div class="event-date">
+                        <span class="date">Date</span>
+                        <span class="month">Month</span>
+                    </div>
+                    <div class="event-details">
+                        <h3 class="event-title">Event Title 2</h3>
+                        <p class="event-description">Description of Event 2.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </section>
 
-    <hr>
 
+
+    <hr>
+    
     <!-- DonoLights Section -->
     <section id="DonoLights" class="container my-5">
-        <div class="row">
+       <div class="row">
             <div class="col-md-6 text-light">
                 <h2>The Donation Lights</h2>
                 <p>See the difference others have made in real time. <br>For a small amount, you can also stake your
@@ -99,40 +133,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <hr>
-
-    <!-- Events Section MAY MOVE THIS TO ANOTHER PAGE JUST TEMP TESING FOR NOW-->
-    <section id="events" class="container my-5">
-        <h2 class="text-light">Upcoming Events</h2>
-
-        <div class="timeline">
-            <!-- Event Item 1 -->
-            <div class="event-item">
-                <div class="event-date">
-                    <span class="date">Date</span>
-                    <span class="month">Month</span>
-                </div>
-                <div class="event-details">
-                    <h3 class="event-title">Event Title 1</h3>
-                    <p class="event-description">Description of Event 1.</p>
-                </div>
-            </div>
-
-            <!-- Event Item 2 -->
-            <div class="event-item">
-                <div class="event-date">
-                    <span class="date">Date</span>
-                    <span class="month">Month</span>
-                </div>
-                <div class="event-details">
-                    <h3 class="event-title">Event Title 2</h3>
-                    <p class="event-description">Description of Event 2.</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
