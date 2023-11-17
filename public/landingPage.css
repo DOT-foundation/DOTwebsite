@@ -210,17 +210,19 @@ hr{
 /* EVENT PAGE CSS */
 #events {
   background-color: #222;
-  padding: 30px;
+  padding: 30px;  
 }
 
 .timeline {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin: 1rem;
 }
 
 .event-item {
   display: flex;
   margin: 20px 0;
+  margin: 1rem;
 }
 
 .event-date {
