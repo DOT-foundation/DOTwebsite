@@ -79,6 +79,7 @@ hr{
 }
 
 .title-text-slogan{
+  color: bl;
   font-size: 2vw;
   font-family: Montserrat-ExtraBoldItalic;
 }
@@ -118,6 +119,19 @@ hr{
   grid-auto-flow: column;
 }
 
+.navbar {
+  background-color: transparent !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.scroll-hide {
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+}
+
 #navLogo{
   justify-items: center;
   width: inherit;
@@ -129,18 +143,26 @@ hr{
 
 .nav-link{
   font-size: 1.2em;
+  font-weight: 800;
+  opacity: 100%;
   margin-left: 10px;
   margin-right: 10px;
+<<<<<<< Updated upstream
   color: #000;
   font-weight: 600;
 }
 
 .nav-link:hover{
   color: rgb(160, 160, 0);
+=======
+  color: black;
+>>>>>>> Stashed changes
 }
 
 #mainIcon{
   height: 50vh;
+  margin-top: 2rem;
+  opacity: 0;
 }
 
 /* Contact Pop-up Styles */
