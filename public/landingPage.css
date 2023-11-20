@@ -16,9 +16,10 @@ src: url(Montserrat-ExtraBoldItalic.ttf);
 }
 
 body{
-  background: rgb(128,128,128);
-  background: linear-gradient(360deg, #343a40 0%, rgba(128,128,128,1) 75%);
+  background: lightsteelblue;
+  /* background: linear-gradient(360deg, #343a40 0%, rgba(128,128,128,1) 75%); */
   scroll-behavior: smooth; 
+  overflow-x: hidden !important;
 }
 
 #main-section {
@@ -120,16 +121,24 @@ hr{
 }
 
 .navbar {
-  background-color: transparent !important;
+  /* background-color: transparent !important; */
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1030;
+  background-color: rgb(255, 255, 217) !important;
+  padding:10px;
+  border-radius: 0 100em 100em 0;
 }
 
 .scroll-hide {
   transform: translateY(-100%);
   transition: transform 0.5s;
+}
+
+#AboutAndMission{
+  background-color: white; 
+   
 }
 
 #navLogo{

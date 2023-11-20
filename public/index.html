@@ -29,25 +29,28 @@
 
 <body>
     <!-- Main Image Section -->
-    <section class="jumbotron text-center text-white rounded-0" style="background-image: url('NEWBGNEW.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center; height: 100vh; position: relative;">
+    <section class="jumbotron text-center text-white rounded-0" style="margin: 0 !important; background-image: url('NEWBGNEW.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center; height: 100vh; position: relative;">
         <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light scroll-hide">
             <div class="container">
                 <script>
                     $(document).ready(function () {
+                        let last;
                         $(".navbar").addClass("scroll-hide");
-        
+                        
                         if (window.pageYOffset === 0) {
                             $(".navbar").removeClass("scroll-hide");
                         }
         
                         $(window).scroll(function () {
-                            var currentScrollPos = window.pageYOffset;
-                            if (currentScrollPos < 100) {
+                            let currentScrollPos = window.pageYOffset;
+                            
+                            if (currentScrollPos < last) {
                                 $(".navbar").removeClass("scroll-hide");
                             } else {
                                 $(".navbar").addClass("scroll-hide");
                             }
+                            last = currentScrollPos;
                         });
                     });
                 </script>
@@ -79,13 +82,50 @@
         <div id="main-section">
             <img src="LOGOicon.png" class="img-fluid" id="mainIcon">
             <h1 class="display-4 title-text">Donors of Tomorrow</h1>
-            <p class="lead title-text-slogan">Each one of us has the ability to make a change for the better in our community</p>
+            <p class="lead title-text-slogan">help others see tomorrows sunrise</p>
 
             <a href="#donate" class="btn btn-primary btn-lg button-28 text-light" id="donate-button" role="button">Donate Now</a>
             <a href="#events" class="btn btn-primary btn-lg button-28 text-light" role="button">Events</a>
             <a href="#volunteer" class="btn btn-primary btn-lg button-28 text-light" role="button">Volunteer</a>
         </div>
     </section>
+
+     <!-- About us Section AND Mission Section -->
+     <section id="AboutAndMission">
+        <h1 style="color: black; margin-bottom: 2rem;">Why help DOT?</h1>
+        <div class="row">
+            <section class="col-md-12">
+                <div class="col-md-5">
+                    <div class="container">
+                        <h2 class="text-light">About Us</h2>
+                        <p class="text-light">Donors of Tomorrow is a non-profit organization formed by devoted students looking to
+                            make a change for the better of the community. We aim to make sure others can find a place in this community, no
+                            matter who they are or where they come from.</p>
+                    </div>
+                    <br>
+                    <br>
+                    
+                </div>
+                
+              
+                
+                <div class="col-md-5">
+                        <div class="container">
+                        <div class="text-light">
+                            <h2>Our Mission</h2>
+                            The DoTo Foundation was founded by students dedicated to supporting the underprivileged,
+                            homeless, children, and disabled individuals in our community. Our mission is to provide essentials,
+                            raise funds, and be the beacon of hope on their path to a brighter future.
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+    </section>
+    <hr>
 
     <!-- Events Section MAY MOVE THIS TO ANOTHER PAGE JUST TEMP TESING FOR NOW-->
     <section id="events" class="container my-5">
@@ -154,35 +194,6 @@
 
     <hr>
 
-    <!-- About us Section AND Mission Section -->
-    <section id="AboutAndMission" class="container my-5">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="container">
-                    <h2 class="text-light">About Us</h2>
-                    <p class="text-light">Donors of Tomorrow is a non-profit organization formed by devoted students looking to
-                        make a change for the better of the community. We aim to make sure others can find a place in this community, no
-                        matter who they are or where they come from.</p>
-                </div>
-                <br>
-                <br>
-            </div>
-
-            <div class="vertical-line"></div>
-
-            <div class="col-md-5">
-                    <div class="container">
-                    <div class="text-light">
-                        <h2>Our Mission</h2>
-                        The DoTo Foundation was founded by students dedicated to supporting the underprivileged,
-                        homeless, children, and disabled individuals in our community. Our mission is to provide essentials,
-                        raise funds, and be the beacon of hope on their path to a brighter future.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <hr>
 
     <!-- Founders Section -->
     <section id="Founders" class="py-5" style="background-color: transparent!important;">
