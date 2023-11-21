@@ -16,7 +16,8 @@ src: url(Montserrat-ExtraBoldItalic.ttf);
 }
 
 body{
-  background: lightsteelblue;
+  background: lightblue;
+  color: black;
   /* background: linear-gradient(360deg, #343a40 0%, rgba(128,128,128,1) 75%); */
   scroll-behavior: smooth; 
   overflow-x: hidden !important;
@@ -80,7 +81,6 @@ hr{
 }
 
 .title-text-slogan{
-  color: bl;
   font-size: 2vw;
   font-family: Montserrat-ExtraBoldItalic;
 }
@@ -137,8 +137,23 @@ hr{
 }
 
 #AboutAndMission{
+  background-image: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  padding-top: 5rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
   background-color: white; 
+  color: black;
    
+}
+
+#AboutAndMissionRow{
+  background-image: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  
 }
 
 #navLogo{
@@ -216,7 +231,7 @@ hr{
 }
 
 #contact-form button {
-  background-color: #007bff;
+  background-color: #eaf3c4;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -225,7 +240,7 @@ hr{
 }
 
 #contact-form button:hover {
-  background-color: #0056b3;
+  background-color: rgb(240, 237, 68);
 }
 
 
@@ -345,6 +360,23 @@ hr{
   transform: translateY(0);
 }
 
+#Statistics {
+  position: relative;
+  background-image: url(clouds.png);
+  background-position: center bottom;
+  background-size: 100%;
+  padding: 3rem;
+}
+
+.parallax-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2); 
+}
+
 @media (max-width: 920px) {
   .box {
       width: 0.4rem;
@@ -378,7 +410,11 @@ hr{
   .vertical-line{
     display: none;
   }
+  #AboutAndMission{
+   background-color: lightblue;
+  }
 }
+
 
 @media (max-height: 738px){
   #mainIcon{

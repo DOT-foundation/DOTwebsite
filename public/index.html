@@ -82,7 +82,7 @@
         <div id="main-section">
             <img src="LOGOicon.png" class="img-fluid" id="mainIcon">
             <h1 class="display-4 title-text">Donors of Tomorrow</h1>
-            <p class="lead title-text-slogan">help others see tomorrows sunrise</p>
+            <p class="lead title-text-slogan">help others see tomorrow's sunrise</p>
 
             <a href="#donate" class="btn btn-primary btn-lg button-28 text-light" id="donate-button" role="button">Donate Now</a>
             <a href="#events" class="btn btn-primary btn-lg button-28 text-light" role="button">Events</a>
@@ -92,40 +92,83 @@
 
      <!-- About us Section AND Mission Section -->
      <section id="AboutAndMission">
-        <h1 style="color: black; margin-bottom: 2rem;">Why help DOT?</h1>
-        <div class="row">
-            <section class="col-md-12">
-                <div class="col-md-5">
-                    <div class="container">
-                        <h2 class="text-light">About Us</h2>
-                        <p class="text-light">Donors of Tomorrow is a non-profit organization formed by devoted students looking to
-                            make a change for the better of the community. We aim to make sure others can find a place in this community, no
-                            matter who they are or where they come from.</p>
-                    </div>
-                    <br>
-                    <br>
+        <div class="row" id="AboutAndMissionRow">
+            <div class="col-md-5">
+                <div class="container" >
+                    <!-- <h2 class="text-light">About Us</h2> -->
+                    <h1 style="color: black; margin-bottom: 2rem;">Why help us?</h1>
+                    <p style="font-weight: 500;">
+                        Donors of Tomorrow is a non-profit organization formed by devoted students looking to
+                        make a change for the better of the community. We aim to make sure others can find a place in this community, no
+                        matter who they are or where they come from. The DoTo Foundation was founded by students dedicated to supporting the underprivileged,
+                        homeless, children, and disabled individuals in our community. Our mission is to provide essentials,
+                        raise funds, and be the beacon of hope on their path to a brighter future.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-7">
+                <!-- Founders Section -->
+                <div class="container text-center">
+                    <h2>Meet our founders!</h2>
+                    <p>Pierce Keo-Yann & Sonan Sahgal</p>
                     
                 </div>
-                
-              
-                
-                <div class="col-md-5">
-                        <div class="container">
-                        <div class="text-light">
-                            <h2>Our Mission</h2>
-                            The DoTo Foundation was founded by students dedicated to supporting the underprivileged,
-                            homeless, children, and disabled individuals in our community. Our mission is to provide essentials,
-                            raise funds, and be the beacon of hope on their path to a brighter future.
+                <div class="row" style="justify-content: center; justify-self: center;">
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="founder-card">
+                            <img src="pierce.png" alt="Pierce" class="img-fluid founder-img">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="founder-card">
+                            <img src="pierce.png" alt="Sonan" class="img-fluid founder-img">
                         </div>
                     </div>
                 </div>
-
-            </section>
-
+            </div>
         </div>
-
     </section>
-    <hr>
+
+    <!-- DONATION STATS -->
+    <section id="Statistics">
+        <div class="parallax-overlay"></div>
+        <div class="container text-center">
+            <h2 style="margin-bottom: 1rem;">Our Impact</h2>
+            <div class="row mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="circle-icon">
+                        <i class="fas fa-tshirt fa-3x"></i>
+                        <h2>0</h2>
+                    </div>
+                    <p class="mt-2">Lbs of Cloth Donated</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="circle-icon">
+                        <i class="fas fa-heart fa-3x"></i>
+                        <h2>0</h2>
+                    </div>
+                    <p class="mt-2">Donations Received</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="circle-icon">
+                        <i class="fas fa-users fa-3x"></i>
+                        <h2>0</h2>
+                    </div>
+                    <p class="mt-2">People Helped</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add JavaScript for parallax effect
+        document.addEventListener("scroll", function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var parallaxElement = document.getElementById("Statistics");
+            parallaxElement.style.backgroundPositionY = "calc(100% - " + scrollTop * 0.5 + "px)";
+        });
+    </script>
 
     <!-- Events Section MAY MOVE THIS TO ANOTHER PAGE JUST TEMP TESING FOR NOW-->
     <section id="events" class="container my-5">
@@ -162,7 +205,7 @@
     <hr>
     
     <!-- DonoLights Section -->
-    <section id="DonoLights" class="container my-5">
+    <!-- <section id="DonoLights" class="container my-5">
        <div class="row">
             <div class="col-md-6 text-light">
                 <h2>The Donation Lights</h2>
@@ -190,30 +233,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <hr>
 
 
-    <!-- Founders Section -->
-    <section id="Founders" class="py-5" style="background-color: transparent!important;">
-        <div class="container text-center">
-            <h2 class=" text-light">Meet our founders!</h2>
-            <p class=" text-light">Pierce Keo-Yann & Sonan Sahgal</p>
-            <div class="row" style="justify-content: center; justify-self: center;">
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="founder-card">
-                        <img src="pierce.png" alt="Pierce" class="img-fluid founder-img">
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="founder-card">
-                        <img src="pierce.png" alt="Sonan" class="img-fluid founder-img">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="bg-dark text-white py-4 text-center">
