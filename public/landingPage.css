@@ -23,6 +23,24 @@ body{
   overflow-x: hidden !important;
 }
 
+.top-left-section {
+  display: flex;
+  color: #ffffff;
+  width: 10%; 
+}
+
+.top-left-section h5{
+  padding-top: 1.6rem;
+  padding-left: 0.7rem;
+  font-family: Montserrat-ExtraBold;
+  font-size: xx-large;
+}
+
+.top-left-section img{
+  width: 8rem;
+  height: auto;
+}
+
 #main-section {
   /* why tf i need to tell da code this important for it 2 work lmao */
   animation-fill-mode: forwards !important; 
@@ -51,12 +69,17 @@ body{
 
 }
 
-.vertical-line {
-  border-left: 0.1rem solid gray;
-  height: 12rem;
-  margin: auto; 
+.vertical-line-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
+.vertical-line {
+  border-right: 0.1rem solid gray;
+  height: 30rem;
+}
 
 hr{
   width: 25%;
@@ -69,6 +92,11 @@ hr{
   display: flex;
   justify-content: center;
   align-items: center;
+  
+}
+
+.founder-card img{
+  width: 15rem;
 }
 
 .founder-card:hover {
@@ -122,38 +150,32 @@ hr{
 
 .navbar {
   /* background-color: transparent !important; */
-  position: fixed;
+  float: right;
   top: 0;
   left: 0;
   z-index: 1030;
   background-color: rgb(255, 255, 217) !important;
   padding:10px;
-  border-radius: 0 100em 100em 0;
+  border-radius: 100em 0 0 100em;
 }
 
-.scroll-hide {
-  transform: translateY(-100%);
-  transition: transform 0.5s;
-}
 
 #AboutAndMission{
-  background-image: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white); 
+  /* background-image: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white);  */
   background-size: cover; 
   background-repeat: no-repeat;
   padding-top: 5rem;
   padding-left: 4rem;
   padding-right: 4rem;
   padding-bottom: 2rem;
-  background-color: white; 
+  background-color: lightblue; 
   color: black;
-   
 }
 
 #AboutAndMissionRow{
-  background-image: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white); 
+  /* background-image: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white);  */
   background-size: cover; 
   background-repeat: no-repeat;
-  
 }
 
 #navLogo{
@@ -175,7 +197,7 @@ hr{
 }
 
 #mainIcon{
-  height: 50vh;
+  height: 40vh;
   margin-top: 2rem;
   opacity: 0;
 }
@@ -300,6 +322,21 @@ hr{
   color: #ccc;
 }
 
+#mindcontainer{
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 440px) {
+  #mindcontainer{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
 
 @media (max-width: 768px) {
   .event-item {
@@ -391,6 +428,11 @@ hr{
   
 }
 
+@media (max-width: 499px){
+  .top-left-section{
+    display: none;
+  }
+}
 
 @media (max-width: 290px) {
   .box {

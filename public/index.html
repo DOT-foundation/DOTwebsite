@@ -28,40 +28,18 @@
 </head>
 
 <body>
-    <!-- Main Image Section -->
-    <section class="jumbotron text-center text-white rounded-0" style="margin: 0 !important; background-image: url('NEWBGNEW.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center; height: 100vh; position: relative;">
-        <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <section>
         <nav class="navbar navbar-expand-lg navbar-light bg-light scroll-hide">
-            <div class="container">
-                <script>
-                    $(document).ready(function () {
-                        let last;
-                        $(".navbar").addClass("scroll-hide");
-                        
-                        if (window.pageYOffset === 0) {
-                            $(".navbar").removeClass("scroll-hide");
-                        }
-        
-                        $(window).scroll(function () {
-                            let currentScrollPos = window.pageYOffset;
-                            
-                            if (currentScrollPos < last) {
-                                $(".navbar").removeClass("scroll-hide");
-                            } else {
-                                $(".navbar").addClass("scroll-hide");
-                            }
-                            last = currentScrollPos;
-                        });
-                    });
-                </script>
+            <div class="container"> 
                 <a class="navbar-brand" href="#"><img src="LOGOfull.png" class="img-fluid" id="navLogo"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse text-center" id="navbarNav">
+                <div class="collapse navbar-collapse text-center narb" id="navbarNav">
                     <!-- Remove mx-auto to align left -->
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="#mission">Mission</a>
                         </li>
@@ -78,10 +56,17 @@
                 </div>
             </div>
         </nav>
-
+    </section>
+    
+    <!-- Main Image Section -->
+    <section class="jumbotron text-center text-white rounded-0" style="margin: 0 !important; background-image: url('NEWBGNEW.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center; height: 100vh; position: relative;">
+        <div class="top-left-section">
+            <img src="LOGOicon.png">
+            <h5>Donors of Tomorrow</h5>
+          </div>  
         <div id="main-section">
             <img src="LOGOicon.png" class="img-fluid" id="mainIcon">
-            <h1 class="display-4 title-text">Donors of Tomorrow</h1>
+            <h1 class="display-4 title-text">You can!</h1>
             <p class="lead title-text-slogan">help others see tomorrow's sunrise</p>
 
             <a href="#donate" class="btn btn-primary btn-lg button-28 text-light" id="donate-button" role="button">Donate Now</a>
@@ -90,45 +75,63 @@
         </div>
     </section>
 
-     <!-- About us Section AND Mission Section -->
-     <section id="AboutAndMission">
+    <!-- About us Section AND Mission Section -->
+    <section id="AboutAndMission">
         <div class="row" id="AboutAndMissionRow">
-            <div class="col-md-5">
-                <div class="container" >
-                    <!-- <h2 class="text-light">About Us</h2> -->
-                    <h1 style="color: black; margin-bottom: 2rem;">Why help us?</h1>
-                    <p style="font-weight: 500;">
-                        Donors of Tomorrow is a non-profit organization formed by devoted students looking to
-                        make a change for the better of the community. We aim to make sure others can find a place in this community, no
-                        matter who they are or where they come from. The DoTo Foundation was founded by students dedicated to supporting the underprivileged,
-                        homeless, children, and disabled individuals in our community. Our mission is to provide essentials,
-                        raise funds, and be the beacon of hope on their path to a brighter future.
-                    </p>
+            <div class="col-md-5 d-flex align-items-center">
+                <div class="container" id="mindcontainer">
+                    <div class="container">
+                        <h1 style="color: black; margin-bottom: 2rem;">Why help us?</h1>
+                        <p style="font-weight: 500;">
+                            Donors of Tomorrow is a non-profit organization formed by devoted students looking to
+                            make a change for the better of the community. We aim to make sure others can find a place in this community, no
+                            matter who they are or where they come from.
+                        </p>
+                    </div>
+                    <div class="container">
+                        <h1 style="color: black; margin-bottom: 2rem;">Our Mission</h1>
+                        <p style="font-weight: 500;">
+                            The DoTo Foundation was founded by students dedicated to supporting the underprivileged,
+                            homeless, children, and disabled individuals in our community. Our mission is to provide essentials,
+                            raise funds, and be the beacon of hope on their path to a brighter future.
+                        </p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="col-md-7">
+
+            <div class="col-md-1">
+                <div class="vertical-line-container">
+                    <div class="vertical-line"></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
                 <!-- Founders Section -->
-                <div class="container text-center">
+                <div class="container">
                     <h2>Meet our founders!</h2>
-                    <p>Pierce Keo-Yann & Sonan Sahgal</p>
-                    
-                </div>
-                <div class="row" style="justify-content: center; justify-self: center;">
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="founder-card">
-                            <img src="pierce.png" alt="Pierce" class="img-fluid founder-img">
+                    <div class="row">
+                        <div class="col-md-4 mb-4 order-md-1 order-2">
+                            <div class="founder-card">
+                                <img src="pierce.png" alt="Pierce" class="img-fluid founder-img">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4">
-                        <div class="founder-card">
-                            <img src="pierce.png" alt="Sonan" class="img-fluid founder-img">
+                        <div class="col-md-8 mb-4 order-md-2 order-1">
+                            <p class="text-left" style="margin-top: 3rem;">Text for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for PierceText for Pierce</p>
+                        </div>
+                        <div class="col-md-4 mb-4 order-md-3 order-4">
+                            <div class="founder-card">
+                                <img src="pierce.png" alt="Sonan" class="img-fluid founder-img">
+                            </div>
+                        </div>
+                        <div class="col-md-8 mb-4 order-md-4 order-3">
+                            <p class="text-left" style="margin-top: 3rem;">Text for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for SonanText for Sonan</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
+
+    
 
     <!-- DONATION STATS -->
     <section id="Statistics">
@@ -162,11 +165,10 @@
     </section>
 
     <script>
-        // Add JavaScript for parallax effect
         document.addEventListener("scroll", function () {
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             var parallaxElement = document.getElementById("Statistics");
-            parallaxElement.style.backgroundPositionY = "calc(100% - " + scrollTop * 0.5 + "px)";
+            parallaxElement.style.backgroundPositionY = "calc(100% - " + scrollTop * 1 + "px)";
         });
     </script>
 
@@ -234,10 +236,6 @@
             </div>
         </div>
     </section> -->
-
-    <hr>
-
-
 
 
     <!-- Contact Section -->
