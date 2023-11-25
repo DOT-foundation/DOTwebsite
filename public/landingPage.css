@@ -16,7 +16,7 @@ src: url(Montserrat-ExtraBoldItalic.ttf);
 }
 
 body{
-  background: rgb(54, 54, 54);
+  background: rgb(255, 255, 255);
   color: black;
   /* background: linear-gradient(360deg, #343a40 0%, rgba(128,128,128,1) 75%); */
   scroll-behavior: smooth; 
@@ -177,6 +177,7 @@ hr{
 } */
 
 #AboutAndMission {
+  margin: auto;
   background-color: #f8f9fa;
   padding: 4rem;
 }
