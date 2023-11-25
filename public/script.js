@@ -240,10 +240,16 @@ window.onscroll = function () {
 // STRIPE CODE
 let stripe = Stripe('add_our_publishable_key');
 let donateButton = document.getElementById("donate-button");
+let donateButton2 = document.getElementById("donate2");
 let modal = document.getElementById("donation-modal");
 let closeDonationModal = document.getElementById("close-donation-modal");
 
 donateButton.addEventListener("click", function() {
+    modal.style.display = "block";
+    fadeInDonoLights(2);
+});
+
+donateButton2.addEventListener("click", function() {
     modal.style.display = "block";
     fadeInDonoLights(2);
 });

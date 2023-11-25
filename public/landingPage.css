@@ -464,6 +464,7 @@ hr{
   font-size: 1rem;
   font-weight: 400;
   color: #555;
+  display: none;
 }
 
 #descText {
@@ -472,12 +473,13 @@ hr{
 }
 
 .chief-label{
-  padding-left: 10rem;
+  padding-left: 5.1rem;
+
 }
 
 .chief-img {
-  /* width: 15rem;
-  height: 15rem; */
+  /* width: auto;
+  height: 10rem; */
   margin: 1rem;
   border-radius: 50%;
   overflow: hidden;
@@ -485,44 +487,14 @@ hr{
 }
 
 .chief-img img {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   object-fit: cover;
 }
 
-@keyframes slideInLeft {
-  0% {
-      opacity: 0;
-      transform: translateX(-100%);
-  }
-  100% {
-      opacity: 1;
-      transform: translateX(0);
-  }
-}
 
-@keyframes slideInRight {
-  0% {
-      opacity: 0;
-      transform: translateX(100%);
-  }
-  100% {
-      opacity: 1;
-      transform: translateX(0);
-  }
-}
 
-.slide-in-left {
-  opacity: 0;
-  transform: translateX(-100%);
-  animation: slideInLeft 1s ease-in-out forwards;
-}
 
-.slide-in-right {
-  opacity: 0;
-  transform: translateX(100%);
-  animation: slideInRight 1s ease-in-out forwards;
-}
 
 @media (max-width: 920px) {
   .box {
@@ -567,12 +539,23 @@ hr{
   }
 
   .chief-img{
-    width: 5rem;
-    height: 5rem;
+    width: 2rem;
+    height: 2rem;
     margin: 1rem;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
+  }
+  .col-md-3{
+    width: auto;
+  }
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: 0px;
   }
 }
 
