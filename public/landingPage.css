@@ -16,7 +16,7 @@ src: url(Montserrat-ExtraBoldItalic.ttf);
 }
 
 body{
-  background: lightblue;
+  background: rgb(54, 54, 54);
   color: black;
   /* background: linear-gradient(360deg, #343a40 0%, rgba(128,128,128,1) 75%); */
   scroll-behavior: smooth; 
@@ -45,7 +45,10 @@ body{
   /* why tf i need to tell da code this important for it 2 work lmao */
   animation-fill-mode: forwards !important; 
   opacity: 0;
+  position: relative;
+  z-index: 1;
 }
+
 
 @keyframes fadeIn {
   from {
@@ -96,15 +99,16 @@ hr{
 }
 
 .founder-card img{
-  width: 15rem;
+  width: 12.5rem;
 }
 
 .founder-card:hover {
   transform: scale(1.1);
 }
 
+
 .title-text {
-  font-size: 7vw;
+  font-size: 8vw;
   font-family: Montserrat-ExtraBold;
 }
 
@@ -159,9 +163,9 @@ hr{
   border-radius: 100em 0 0 100em;
 }
 
-
+/* 
 #AboutAndMission{
-  /* background-image: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white);  */
+  
   background-size: cover; 
   background-repeat: no-repeat;
   padding-top: 5rem;
@@ -170,7 +174,14 @@ hr{
   padding-bottom: 2rem;
   background-color: lightblue; 
   color: black;
+} */
+
+#AboutAndMission {
+  background-color: #f8f9fa;
+  padding: 4rem;
 }
+
+
 
 #AboutAndMissionRow{
   /* background-image: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white);  */
@@ -354,11 +365,11 @@ hr{
 
 .button-28 {
   appearance: none;
-  background-color: transparent;
-  border: 2px solid #9a9a9a;
+  background-color: rgba(153, 153, 153, 0.5);
+  border: 2px solid rgb(153, 153, 153);
   border-radius: 15px;
   box-sizing: border-box;
-  color: #3B3B3B;
+  color: black;
   cursor: pointer;
   display: inline-block;
   font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -397,11 +408,40 @@ hr{
   transform: translateY(0);
 }
 
+.customContainer{
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.customContainer h1{
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.customContainer h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  padding-top: 3.25rem;
+}
+
+
+.customContainer p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5;
+}
+
 #Statistics {
   position: relative;
   background-image: url(clouds.png);
   background-position: center bottom;
   background-size: 100%;
+  width: 110%;
   padding: 3rem;
 }
 
@@ -412,6 +452,76 @@ hr{
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.2); 
+  width: 100%;
+}
+
+.circle-icon h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.circle-icon p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+}
+
+#descText {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.chief-label{
+  padding-left: 10rem;
+}
+
+.chief-img {
+  /* width: 15rem;
+  height: 15rem; */
+  margin: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.chief-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes slideInLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-100%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+      opacity: 0;
+      transform: translateX(100%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideInLeft 1s ease-in-out forwards;
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInRight 1s ease-in-out forwards;
 }
 
 @media (max-width: 920px) {
@@ -455,6 +565,15 @@ hr{
   #AboutAndMission{
    background-color: lightblue;
   }
+
+  .chief-img{
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
 }
 
 
@@ -471,5 +590,29 @@ hr{
 @media (max-height: 468px){
   #mainIcon{
     height: 20vh;
+  }
+}
+
+@media (max-width: 1200px){
+  .customContainer{
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 1200px){
+  .customContainer{
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 600px){
+  #descText{
+    margin-top: 0;
   }
 }
