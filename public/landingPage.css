@@ -442,7 +442,7 @@ hr{
   background-image: url(clouds.png);
   background-position: center bottom;
   background-size: 100%;
-  width: 110%;
+  width: 100%;
   padding: 3rem;
 }
 
