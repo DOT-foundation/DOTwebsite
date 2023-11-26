@@ -491,12 +491,16 @@ hr{
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto;
+  transition: transform 0.3s;
 }
 
 .chief-img img {
   width: 50%;
   height: 50%;
   object-fit: cover;
+}
+.chief-img:hover {
+  transform: scale(1.05);
 }
 
 
