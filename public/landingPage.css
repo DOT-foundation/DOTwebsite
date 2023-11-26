@@ -209,7 +209,7 @@ hr{
 }
 
 #mainIcon{
-  height: 40vh;
+  height: 25vh;
   margin-top: 2rem;
   opacity: 0;
 }
@@ -281,13 +281,18 @@ hr{
 /* EVENT PAGE CSS */
 #events {
   background-color: #222;
-  padding: 30px;  
+  padding: 30px;
+  margin: 0px;
 }
 
 .timeline {
   display: flex;
   flex-direction: row;
-  margin: 1rem;
+  margin: auto;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .event-item {
@@ -334,7 +339,7 @@ hr{
   color: #ccc;
 }
 
-#mindcontainer{
+#mindcontainer {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -342,11 +347,11 @@ hr{
 }
 
 @media (max-width: 440px) {
-  #mindcontainer{
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
+  #mindcontainer {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+      margin-right: 0 !important;
+      margin-left: 0 !important;
   }
 }
 
@@ -415,6 +420,7 @@ hr{
   margin-right: 0px;
   margin-left: 0px;
 }
+
 
 .customContainer h1{
   font-size: 2.5rem;
@@ -535,10 +541,6 @@ hr{
   .vertical-line{
     display: none;
   }
-  #AboutAndMission{
-   background-color: lightblue;
-  }
-
   .chief-img{
     width: 2rem;
     height: 2rem;
