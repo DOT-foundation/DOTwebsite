@@ -15,6 +15,10 @@ font-family: Montserrat-ExtraBoldItalic;
 src: url(Montserrat-ExtraBoldItalic.ttf);
 }
 
+html{
+  overflow-x: hidden !important;
+}
+
 body{
   background: rgb(255, 255, 255);
   color: black;
@@ -477,6 +481,7 @@ hr{
 #descText {
   font-size: 1.2rem;
   color: #555;
+  margin: auto;
 }
 
 .chief-label{
@@ -567,21 +572,19 @@ hr{
 }
 
 
-@media (max-height: 738px){
+@media (max-height: 875px){
   #mainIcon{
-    height: 40vh;
+    height: 10vh;
   }
 }
-@media (max-height: 550px){
+
+@media (max-height: 660px){
   #mainIcon{
-    height: 30vh;
+    height: 0vh;
   }
 }
-@media (max-height: 468px){
-  #mainIcon{
-    height: 20vh;
-  }
-}
+
+
 
 @media (max-width: 1200px){
   .customContainer{
