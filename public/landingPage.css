@@ -484,9 +484,17 @@ hr{
   margin: auto;
 }
 
+.chief-label {
+  margin-bottom: 2px;
+}
+
 .chief-img {
   border-radius: 50%;
   transition: transform 0.3s;
+}
+
+.chief-card {
+  padding: 5px;
 }
 
 /* .chief-img img {
