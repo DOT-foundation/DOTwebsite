@@ -491,19 +491,28 @@ hr{
 .chief-img {
   border-radius: 50%;
   transition: transform 0.3s;
+  width: 50%;
+  margin: auto;
 }
 
 .chief-card {
-  padding: 5px;
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  margin: auto;
 }
 
-/* .chief-img img {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-} */
+
 .chief-img:hover {
   transform: scale(1.05);
+}
+
+.chief-label,
+.text-center {
+  flex-grow: 1; /* Allow text to grow and push down */
 }
 
 
