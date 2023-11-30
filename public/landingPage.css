@@ -1,18 +1,18 @@
 @font-face {
   font-family: Montserrat-Bold;
-  src: url(Montserrat-Bold.ttf);
+  src: url(./fonts/Montserrat-Bold.ttf);
 }
 @font-face {
   font-family: Montserrat-BoldItalic;
-  src: url(Montserrat-BoldItalic.ttf);
+  src: url(./fonts/Montserrat-BoldItalic.ttf);
 }
 @font-face {
 font-family: Montserrat-ExtraBold;
-src: url(Montserrat-ExtraBold.ttf);
+src: url(./fonts/Montserrat-ExtraBold.ttf);
 }
 @font-face {
 font-family: Montserrat-ExtraBoldItalic;
-src: url(Montserrat-ExtraBoldItalic.ttf);
+src: url(./fonts/Montserrat-ExtraBoldItalic.ttf);
 }
 
 html{
@@ -112,12 +112,12 @@ hr{
 
 
 .title-text {
-  font-size: 8vw;
+  font-size: max(8vw, 36px);
   font-family: Montserrat-ExtraBold;
 }
 
 .title-text-slogan{
-  font-size: 2vw;
+  font-size: max(2vw, 16px);
   font-family: Montserrat-ExtraBoldItalic;
 }
 
@@ -449,7 +449,7 @@ hr{
 
 #Statistics {
   position: relative;
-  background-image: url(clouds.png);
+  background-image: url(./images/clouds.png);
   background-position: center bottom;
   background-size: 100%;
   width: 100%;
@@ -484,26 +484,16 @@ hr{
   margin: auto;
 }
 
-.chief-label{
-  padding-left: 5.1rem;
-
-}
-
 .chief-img {
-  /* width: auto;
-  height: 10rem; */
-  margin: 1rem;
   border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto;
   transition: transform 0.3s;
 }
 
-.chief-img img {
+/* .chief-img img {
   width: 50%;
   height: 50%;
   object-fit: cover;
-}
+} */
 .chief-img:hover {
   transform: scale(1.05);
 }
@@ -551,8 +541,8 @@ hr{
     display: none;
   }
   .chief-img{
-    width: 2rem;
-    height: 2rem;
+    /* width: 2rem;
+    height: 2rem; */
     margin: 1rem;
     border-radius: 50%;
     overflow: hidden;
