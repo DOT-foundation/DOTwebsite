@@ -114,11 +114,18 @@ hr{
 .title-text {
   font-size: max(8vw, 36px);
   font-family: Montserrat-ExtraBold;
+  padding-top: 24.5vh;
 }
 
 .title-text-slogan{
   font-size: max(2vw, 16px);
   font-family: Montserrat-ExtraBoldItalic;
+}
+
+.animate {
+  animation-name: fadeIn;
+  animation-duration: 1s; 
+  animation-fill-mode: forwards; 
 }
 
 .box {
@@ -182,7 +189,6 @@ hr{
 
 #AboutAndMission {
   margin: auto;
-  background-color: #f8f9fa;
   padding: 4rem;
 }
 
@@ -505,6 +511,74 @@ hr{
   margin: auto;
 }
 
+.chief-card-below {
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  margin: auto;
+  animation-fill-mode: forwards;
+}
+.chief-card-bottom {
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  margin: auto;
+  animation-fill-mode: forwards;
+}
+
+.chief-card-below.animated {
+  animation: slideDown 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.chief-card-bottom.animated {
+  animation: slideDown 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+
+.chief-card-below:nth-child(1){
+  animation-delay: 0s;
+  opacity: 0;
+}
+.chief-card-below:nth-child(2){
+  animation-delay: 0s;
+  opacity: 0;
+}
+.chief-card-below:nth-child(3){
+  animation-delay: 0s;
+  opacity: 0;
+}
+.chief-card-below:nth-child(4){
+  animation-delay: 0s;
+  opacity: 0;
+}
+
+
+.chief-card-bottom:nth-child(1){
+  animation-delay: 0;
+  opacity: 0;
+}
+.chief-card-bottom:nth-child(2){
+  animation-delay: 0;
+  opacity: 0;
+}
+.chief-card-bottom:nth-child(3){
+  animation-delay: 0;
+  opacity: 0;
+}
+.chief-card-bottom:nth-child(4){
+  animation-delay: 0;
+  opacity: 0;
+}
+
+
 
 .chief-img:hover {
   transform: scale(1.05);
@@ -512,9 +586,19 @@ hr{
 
 .chief-label,
 .text-center {
-  flex-grow: 1; /* Allow text to grow and push down */
+  flex-grow: 1; 
 }
 
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 
 

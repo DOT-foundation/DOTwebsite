@@ -237,36 +237,46 @@ window.onscroll = function () {
     }
 }
 
-// STRIPE CODE
-let stripe = Stripe('add_our_publishable_key');
-let donateButton = document.getElementById("donate-button");
-let donateButton2 = document.getElementById("donate2");
-let modal = document.getElementById("donation-modal");
-let closeDonationModal = document.getElementById("close-donation-modal");
 
-donateButton.addEventListener("click", function() {
-    modal.style.display = "block";
-    fadeInDonoLights(2);
+document.addEventListener("DOMContentLoaded", function () {
+let chiefCards = document.querySelectorAll(".chief-card-below");
+
+let observer = new IntersectionObserver(
+    function (entries, observer) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+        entry.target.classList.add("animated");
+        observer.unobserve(entry.target);
+        }
+    });
+    },
+    { threshold: 0.5 } 
+);
+
+chiefCards.forEach(function (chiefCard) {
+    observer.observe(chiefCard);
+});
 });
 
-donateButton2.addEventListener("click", function() {
-    modal.style.display = "block";
-    fadeInDonoLights(2);
+document.addEventListener("DOMContentLoaded", function () {
+let chiefCards = document.querySelectorAll(".chief-card-bottom");
+
+let observer = new IntersectionObserver(
+    function (entries, observer) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+        entry.target.classList.add("animated");
+        observer.unobserve(entry.target);
+        }
+    });
+    },
+    { threshold: 0.5 } 
+);
+
+chiefCards.forEach(function (chiefCard) {
+    observer.observe(chiefCard);
 });
-
-closeDonationModal.addEventListener("click", function() {
-    modal.style.display = "none";
 });
-
-//sumbit donoatiion
-let donationForm = document.getElementById("donation-form");
-let donateNowButton = document.getElementById("donate-now-button");
-
-function sendDono(DonoAmt, lightId, color, ShowAmt, ShowName) {
-    // ADD REAL CODE TO HANDLE PAYMENT WITH STRIPE HERE
-    console.log("DONO REQ RECV", DonoAmt, lightId, color, ShowAmt, ShowName);
-};
-
 
 
 //Functions to grab light data 
@@ -306,7 +316,7 @@ function grabFetchedData(){
 function pushData(index, donationAmount, donationTime, lightColor, lightID, showName, showAmount) {
     //Had to make the code promise me it would wrork ykyk
     return new Promise(function(resolve, reject) {
-        var data = {
+        let data = {
             index: index,
             donationAmount: donationAmount,
             donationTime: donationTime,
