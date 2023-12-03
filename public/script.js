@@ -237,6 +237,27 @@ window.onscroll = function () {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    let chiefCards = document.querySelectorAll("#slideInDivStatic");
+    
+    let observer = new IntersectionObserver(
+        function (entries, observer) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+            entry.target.classList.add("slideInDiv");
+            observer.unobserve(entry.target);
+            }
+        });
+        },
+        { threshold: 0.5 } 
+    );
+    
+    chiefCards.forEach(function (chiefCard) {
+        observer.observe(chiefCard);
+    });
+    });
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
 let chiefCards = document.querySelectorAll(".chief-card-below");

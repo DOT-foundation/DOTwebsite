@@ -24,9 +24,8 @@ body{
   color: black;
   /* background: linear-gradient(360deg, #343a40 0%, rgba(128,128,128,1) 75%); */
   scroll-behavior: smooth; 
-  overflow-x: hidden !important;
+  overflow-x: hidden !important; 
 }
-
 .top-left-section {
   display: flex;
   color: #ffffff;
@@ -34,14 +33,15 @@ body{
 }
 
 .top-left-section h5{
-  padding-top: 1.6rem;
+  padding-top: 1.3rem;
   padding-left: 0.7rem;
   font-family: Montserrat-ExtraBold;
-  font-size: xx-large;
+  font-size: 2rem;
+  
 }
 
 .top-left-section img{
-  width: 8rem;
+  width: 7rem;
   height: auto;
 }
 
@@ -112,7 +112,7 @@ hr{
 
 
 .title-text {
-  font-size: max(8vw, 36px);
+  font-size: max(10vw, 36px);
   font-family: Montserrat-ExtraBold;
   padding-top: 24.5vh;
 }
@@ -170,47 +170,22 @@ hr{
   left: 0;
   z-index: 1030;
   background-color: rgb(255, 255, 217) !important;
-  padding:10px;
+  padding: 10px;
   border-radius: 100em 0 0 100em;
-}
-
-/* 
-#AboutAndMission{
-  
-  background-size: cover; 
-  background-repeat: no-repeat;
-  padding-top: 5rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  padding-bottom: 2rem;
-  background-color: lightblue; 
-  color: black;
-} */
-
-#AboutAndMission {
-  margin: auto;
-  padding: 4rem;
-}
-
-
-
-#AboutAndMissionRow{
-  /* background-image: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white);  */
-  background-size: cover; 
-  background-repeat: no-repeat;
 }
 
 #navLogo{
   justify-items: center;
   width: inherit;
   display: inline;
-  width: 4rem;
+  width: 6rem;
   height: auto;
+  margin-left: 1.3rem;
 }
 
 
 .nav-link{
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: 800;
   opacity: 100%;
   margin-left: 10px;
@@ -222,6 +197,17 @@ hr{
   height: 25vh;
   margin-top: 2rem;
   opacity: 0;
+}
+
+#AboutAndMission {
+  margin: auto;
+  padding: 4rem;
+}
+
+#AboutAndMissionRow{
+  /* background-image: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white);  */
+  background-size: cover; 
+  background-repeat: no-repeat;
 }
 
 /* Contact Pop-up Styles */
@@ -290,7 +276,7 @@ hr{
 
 /* EVENT PAGE CSS */
 #events {
-  background-color: #222;
+  background-color: #2e2e2e;
   padding: 30px;
   margin: 0px;
 }
@@ -312,7 +298,7 @@ hr{
 }
 
 .event-date {
-  background-color: #007bff;
+  background-color: darkgray;
   color: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -332,7 +318,7 @@ hr{
 
 .month {
   font-size: 18px;
-}
+} 
 
 .event-details {
   flex: 1;
@@ -341,7 +327,8 @@ hr{
 .event-title {
   font-size: 24px;
   font-weight: bold;
-  color: #007bff;
+  color: lightgray  ;
+  text-align: left;
 }
 
 .event-description {
@@ -389,8 +376,8 @@ hr{
   cursor: pointer;
   display: inline-block;
   font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 25px;
+  font-weight: 500;
   line-height: normal;
   margin: 0;
   min-height: 60px;
@@ -601,6 +588,26 @@ hr{
 }
 
 
+.slideInDiv{
+  animation: slideIn 0.75s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+#slideInDivStatic{
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(200%) scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+}
+
 
 
 @media (max-width: 920px) {
@@ -617,11 +624,32 @@ hr{
   
 }
 
-@media (max-width: 499px){
+@media (max-width: 770px){
   .top-left-section{
     display: none;
   }
 }
+
+@media (max-width: 900px){
+  .title-text{
+    font-size: max(15vw, 36px);
+    font-family: Montserrat-ExtraBold;
+    padding-top: 37.5vh;
+  }
+
+}
+
+@media (max-width: 900px){
+  .title-text{
+    font-size: max(17vw, 36px);
+    font-family: Montserrat-ExtraBold;
+    padding-top: 47.5vh;
+  }
+  .button-28 {
+    font-size: 17px;
+  }
+}
+
 
 @media (max-width: 290px) {
   .box {
