@@ -1,31 +1,58 @@
 @font-face {
   font-family: Montserrat-Bold;
-  src: url(Montserrat-Bold.ttf);
+  src: url(./fonts/Montserrat-Bold.ttf);
 }
 @font-face {
   font-family: Montserrat-BoldItalic;
-  src: url(Montserrat-BoldItalic.ttf);
+  src: url(./fonts/Montserrat-BoldItalic.ttf);
 }
 @font-face {
 font-family: Montserrat-ExtraBold;
-src: url(Montserrat-ExtraBold.ttf);
+src: url(./fonts/Montserrat-ExtraBold.ttf);
 }
 @font-face {
 font-family: Montserrat-ExtraBoldItalic;
-src: url(Montserrat-ExtraBoldItalic.ttf);
+src: url(./fonts/Montserrat-ExtraBoldItalic.ttf);
+}
+
+html{
+  overflow-x: hidden !important;
 }
 
 body{
-  background: rgb(128,128,128);
-  background: linear-gradient(360deg, #343a40 0%, rgba(128,128,128,1) 75%);
+  background: rgb(255, 255, 255);
+  color: black;
+  /* background: linear-gradient(360deg, #343a40 0%, rgba(128,128,128,1) 75%); */
   scroll-behavior: smooth; 
+  overflow-x: hidden !important; 
+}
+.top-left-section {
+  display: flex;
+  color: #ffffff;
+  width: 10%; 
+}
+
+.top-left-section h5{
+  padding-top: 1.3rem;
+  padding-left: 0.7rem;
+  font-family: Montserrat-ExtraBold;
+  font-size: 2rem;
+  
+}
+
+.top-left-section img{
+  width: 7rem;
+  height: auto;
 }
 
 #main-section {
   /* why tf i need to tell da code this important for it 2 work lmao */
   animation-fill-mode: forwards !important; 
   opacity: 0;
+  position: relative;
+  z-index: 1;
 }
+
 
 @keyframes fadeIn {
   from {
@@ -49,12 +76,17 @@ body{
 
 }
 
-.vertical-line {
-  border-left: 0.1rem solid gray;
-  height: 12rem;
-  margin: auto; 
+.vertical-line-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
+.vertical-line {
+  border-right: 0.1rem solid gray;
+  height: 30rem;
+}
 
 hr{
   width: 25%;
@@ -67,20 +99,33 @@ hr{
   display: flex;
   justify-content: center;
   align-items: center;
+  
+}
+
+.founder-card img{
+  width: 12.5rem;
 }
 
 .founder-card:hover {
   transform: scale(1.1);
 }
 
+
 .title-text {
-  font-size: 7vw;
+  font-size: max(10vw, 36px);
   font-family: Montserrat-ExtraBold;
+  padding-top: 24.5vh;
 }
 
 .title-text-slogan{
-  font-size: 2vw;
+  font-size: max(2vw, 16px);
   font-family: Montserrat-ExtraBoldItalic;
+}
+
+.animate {
+  animation-name: fadeIn;
+  animation-duration: 1s; 
+  animation-fill-mode: forwards; 
 }
 
 .box {
@@ -118,22 +163,51 @@ hr{
   grid-auto-flow: column;
 }
 
+.navbar {
+  /* background-color: transparent !important; */
+  float: right;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  background-color: rgb(255, 255, 217) !important;
+  padding: 10px;
+  border-radius: 100em 0 0 100em;
+}
+
 #navLogo{
   justify-items: center;
   width: inherit;
   display: inline;
-  width: 4rem;
+  width: 6rem;
   height: auto;
+  margin-left: 1.3rem;
 }
 
+
 .nav-link{
-  font-size: 1.2em;
+  font-size: 1.3em;
+  font-weight: 800;
+  opacity: 100%;
   margin-left: 10px;
   margin-right: 10px;
+  color: black;
 }
 
 #mainIcon{
-  height: 50vh;
+  height: 25vh;
+  margin-top: 2rem;
+  opacity: 0;
+}
+
+#AboutAndMission {
+  margin: auto;
+  padding: 4rem;
+}
+
+#AboutAndMissionRow{
+  /* background-image: linear-gradient(to right, lightblue, lightblue 50%, white 50%, white);  */
+  background-size: cover; 
+  background-repeat: no-repeat;
 }
 
 /* Contact Pop-up Styles */
@@ -187,7 +261,7 @@ hr{
 }
 
 #contact-form button {
-  background-color: #007bff;
+  background-color: #eaf3c4;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -196,28 +270,35 @@ hr{
 }
 
 #contact-form button:hover {
-  background-color: #0056b3;
+  background-color: rgb(240, 237, 68);
 }
 
 
 /* EVENT PAGE CSS */
 #events {
-  background-color: #222;
+  background-color: #2e2e2e;
   padding: 30px;
+  margin: 0px;
 }
 
 .timeline {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin: auto;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .event-item {
   display: flex;
   margin: 20px 0;
+  margin: 1rem;
 }
 
 .event-date {
-  background-color: #007bff;
+  background-color: darkgray;
   color: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -237,7 +318,7 @@ hr{
 
 .month {
   font-size: 18px;
-}
+} 
 
 .event-details {
   flex: 1;
@@ -246,7 +327,8 @@ hr{
 .event-title {
   font-size: 24px;
   font-weight: bold;
-  color: #007bff;
+  color: lightgray  ;
+  text-align: left;
 }
 
 .event-description {
@@ -254,6 +336,21 @@ hr{
   color: #ccc;
 }
 
+#mindcontainer {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 440px) {
+  #mindcontainer {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+  }
+}
 
 @media (max-width: 768px) {
   .event-item {
@@ -271,16 +368,16 @@ hr{
 
 .button-28 {
   appearance: none;
-  background-color: transparent;
-  border: 2px solid #9a9a9a;
+  background-color: rgba(153, 153, 153, 0.5);
+  border: 2px solid rgb(153, 153, 153);
   border-radius: 15px;
   box-sizing: border-box;
-  color: #3B3B3B;
+  color: black;
   cursor: pointer;
   display: inline-block;
   font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 25px;
+  font-weight: 500;
   line-height: normal;
   margin: 0;
   min-height: 60px;
@@ -314,6 +411,205 @@ hr{
   transform: translateY(0);
 }
 
+.customContainer{
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+
+.customContainer h1{
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.customContainer h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  padding-top: 3.25rem;
+}
+
+
+.customContainer p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+#Statistics {
+  position: relative;
+  background-image: url(./images/clouds.png);
+  background-position: center bottom;
+  background-size: 100%;
+  width: 100%;
+  padding: 3rem;
+}
+
+.parallax-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2); 
+  width: 100%;
+}
+
+.circle-icon h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.circle-icon p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+  display: none;
+}
+
+#descText {
+  font-size: 1.2rem;
+  color: #555;
+  margin: auto;
+}
+
+.chief-label {
+  margin-bottom: 2px;
+}
+
+.chief-img {
+  border-radius: 50%;
+  transition: transform 0.3s;
+  width: 50%;
+  margin: auto;
+}
+
+.chief-card {
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  margin: auto;
+}
+
+.chief-card-below {
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  margin: auto;
+  animation-fill-mode: forwards;
+}
+.chief-card-bottom {
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  margin: auto;
+  animation-fill-mode: forwards;
+}
+
+.chief-card-below.animated {
+  animation: slideDown 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.chief-card-bottom.animated {
+  animation: slideDown 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+
+.chief-card-below:nth-child(1){
+  animation-delay: 0s;
+  opacity: 0;
+}
+.chief-card-below:nth-child(2){
+  animation-delay: 0s;
+  opacity: 0;
+}
+.chief-card-below:nth-child(3){
+  animation-delay: 0s;
+  opacity: 0;
+}
+.chief-card-below:nth-child(4){
+  animation-delay: 0s;
+  opacity: 0;
+}
+
+
+.chief-card-bottom:nth-child(1){
+  animation-delay: 0;
+  opacity: 0;
+}
+.chief-card-bottom:nth-child(2){
+  animation-delay: 0;
+  opacity: 0;
+}
+.chief-card-bottom:nth-child(3){
+  animation-delay: 0;
+  opacity: 0;
+}
+.chief-card-bottom:nth-child(4){
+  animation-delay: 0;
+  opacity: 0;
+}
+
+
+
+.chief-img:hover {
+  transform: scale(1.05);
+}
+
+.chief-label,
+.text-center {
+  flex-grow: 1; 
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.slideInDiv{
+  animation: slideIn 0.75s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+#slideInDivStatic{
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(200%) scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+}
+
+
+
 @media (max-width: 920px) {
   .box {
       width: 0.4rem;
@@ -326,6 +622,32 @@ hr{
     grid-template-rows: repeat(10, 1.125em);
   }
   
+}
+
+@media (max-width: 770px){
+  .top-left-section{
+    display: none;
+  }
+}
+
+@media (max-width: 900px){
+  .title-text{
+    font-size: max(15vw, 36px);
+    font-family: Montserrat-ExtraBold;
+    padding-top: 37.5vh;
+  }
+
+}
+
+@media (max-width: 900px){
+  .title-text{
+    font-size: max(17vw, 36px);
+    font-family: Montserrat-ExtraBold;
+    padding-top: 47.5vh;
+  }
+  .button-28 {
+    font-size: 17px;
+  }
 }
 
 
@@ -347,20 +669,62 @@ hr{
   .vertical-line{
     display: none;
   }
+  .chief-img{
+    /* width: 2rem;
+    height: 2rem; */
+    margin: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .col-md-3{
+    width: auto;
+  }
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: 0px;
+  }
 }
 
-@media (max-height: 738px){
+
+@media (max-height: 875px){
   #mainIcon{
-    height: 40vh;
+    height: 10vh;
   }
 }
-@media (max-height: 550px){
+
+@media (max-height: 660px){
   #mainIcon{
-    height: 30vh;
+    height: 0vh;
   }
 }
-@media (max-height: 468px){
-  #mainIcon{
-    height: 20vh;
+
+
+
+@media (max-width: 1200px){
+  .customContainer{
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 1200px){
+  .customContainer{
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 600px){
+  #descText{
+    margin-top: 0;
   }
 }
