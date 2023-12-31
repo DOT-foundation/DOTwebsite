@@ -439,9 +439,9 @@ const lightUpdate = setInterval(updateLights, 5000);
 
 //Animate Dono stats
 document.addEventListener("DOMContentLoaded", function() {
-    let clothIcon = document.getElementById('cloth-icon');
-    let clothCount = document.getElementById('cloth-count');
-    let clothCountValue = 200;
+    let clothesIcon = document.getElementById('clothes-icon');
+    let clothesCount = document.getElementById('clothes-count');
+    let clothesCountValue = 200;
 
     let options = {
         root: null,
@@ -452,13 +452,13 @@ document.addEventListener("DOMContentLoaded", function() {
     let observer = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                animateCount(clothCount, 0, clothCountValue);
+                animateCount(clothesCount, 0, clothesCountValue);
                 observer.unobserve(entry.target);
             }
         });
     }, options);
 
-    observer.observe(clothIcon);
+    observer.observe(clothesIcon);
 
     function animateCount(element, start, end) {
         let duration = 2500;

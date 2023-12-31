@@ -464,7 +464,7 @@ hr{
   overflow: hidden;
 }
 
-#cloth-count {
+#clotheses-count {
   margin: 0;
   transition: transform 1s ease-out;
   transform: translateY(0);
